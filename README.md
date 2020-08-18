@@ -1,6 +1,6 @@
-# {LDD Name} Local Data Dictionary (LDD)
+# Spectral Library Local Data Dictionary (LDD)
 
-The {LDD Name} dictionary contains classes that describe a fictitious mission. It can be used as a starting point for creating a new local data dictionary (LDD). After cloning the files, do the following:
+The Spectral Library dictionary contains classes that describe a fictitious mission. It can be used as a starting point for creating a new local data dictionary (LDD). After cloning the files, do the following:
 
 
 # Documentation
