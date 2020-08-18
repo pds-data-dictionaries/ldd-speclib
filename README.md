@@ -1,6 +1,8 @@
 # Spectral Library Local Data Dictionary (LDD)
 
-The Spectral Library dictionary contains classes that describe a fictitious mission. It can be used as a starting point for creating a new local data dictionary (LDD). After cloning the files, do the following:
+The Spectral Library Data Dictionary defines the metadata terms that describe laboratory spectral measurements, including classification of the samples measured.
+
+After cloning the files, do the following:
 
 
 # Documentation
