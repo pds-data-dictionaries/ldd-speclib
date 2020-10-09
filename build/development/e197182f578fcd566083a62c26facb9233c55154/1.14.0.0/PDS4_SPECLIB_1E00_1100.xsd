@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:speclib  Version:1.0.0.0 - Tue Aug 18 16:31:07 UTC 2020 -->
+  <!-- PDS4 XML/Schema for Name Space Id:speclib  Version:1.1.0.0 - Fri Oct 09 16:35:47 UTC 2020 -->
   <!-- Generated from the PDS4 Information Model Version 1.14.0.0 - System Build 10b -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
   <!-- 1.14.0.0 - pds: - Common Dictionary                                       -->
-  <!-- 1.0.0.0 - speclib: - Spectral Library                                     -->
+  <!-- 1.1.0.0 - speclib: - Spectral Library                                     -->
   <!--   file:/home/runner/work/ldd-speclib/ldd-speclib/src/PDS4_SPECLIB_IngestL -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -14,7 +14,7 @@
     xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
     elementFormDefault="qualified"
     attributeFormDefault="unqualified"
-    version="1.0.0.0">
+    version="1.1.0.0">
  
     <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.xsd"/>
  
@@ -66,13 +66,13 @@ Post-peer-review
       <xs:element name="spectral_range_parameter_name" type="speclib:spectral_range_parameter_name" minOccurs="1" maxOccurs="1"> </xs:element>
       <xs:element name="spectral_range_min" type="speclib:spectral_range_min" minOccurs="1" maxOccurs="1"> </xs:element>
       <xs:element name="spectral_range_max" type="speclib:spectral_range_max" minOccurs="1" maxOccurs="1"> </xs:element>
-      <xs:element name="spectral_range_unit" type="speclib:spectral_range_unit" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="spectral_range_unit_name" type="speclib:spectral_range_unit_name" minOccurs="1" maxOccurs="1"> </xs:element>
       <xs:element name="spectral_sampling_interval_min" nillable="true" type="speclib:spectral_sampling_interval_min" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="spectral_sampling_interval_max" nillable="true" type="speclib:spectral_sampling_interval_max" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="spectral_sampling_interval_unit" nillable="true" type="speclib:spectral_sampling_interval_unit" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="spectral_sampling_interval_unit_name" nillable="true" type="speclib:spectral_sampling_interval_unit_name" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="spectral_resolution_width_min" nillable="true" type="speclib:spectral_resolution_width_min" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="spectral_resolution_width_max" nillable="true" type="speclib:spectral_resolution_width_max" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="spectral_resolution_width_unit" nillable="true" type="speclib:spectral_resolution_width_unit" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="spectral_resolution_width_unit_name" nillable="true" type="speclib:spectral_resolution_width_unit_name" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="measurement_reference_standard" type="speclib:measurement_reference_standard" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="measurement_geometry_type" type="speclib:measurement_geometry_type" minOccurs="1" maxOccurs="1"> </xs:element>
       <xs:element name="incidence_angle" nillable="true" type="speclib:incidence_angle" minOccurs="1" maxOccurs="1"> </xs:element>
@@ -785,11 +785,11 @@ Post-peer-review
 	   </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="spectral_range_unit">
+  <xs:simpleType name="spectral_range_unit_name">
     <xs:annotation>
-      <xs:documentation>The spectral_range_unit element identifies the
-        unit of measure for the values specified by spectral_range_min
-        and spectral_range_max.</xs:documentation>
+      <xs:documentation>The spectral_range_unit_name element identifies
+        the unit of measure for the values specified by
+        spectral_range_min and spectral_range_max.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:UTF8_Short_String_Collapsed">
      <xs:minLength value="1"/>
@@ -827,9 +827,9 @@ Post-peer-review
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:complexType name="spectral_resolution_width_unit">
+  <xs:complexType name="spectral_resolution_width_unit_name">
     <xs:annotation>
-      <xs:documentation>The spectral_resolution_width_unit element
+      <xs:documentation>The spectral_resolution_width_unit_name element
         identifies the unit of measure for the values specified by
         spectral_resolution_width_min and
         spectral_resolution_width_max.</xs:documentation>
@@ -873,9 +873,9 @@ Post-peer-review
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:complexType name="spectral_sampling_interval_unit">
+  <xs:complexType name="spectral_sampling_interval_unit_name">
     <xs:annotation>
-      <xs:documentation>The spectral_sampling_interval_unit element
+      <xs:documentation>The spectral_sampling_interval_unit_name element
         identifies the unit of measure for the values specified by
         spectral_sampling_interval_min and
         spectral_sampling_interval_max.</xs:documentation>
@@ -923,21 +923,4 @@ Post-peer-review
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
- 
-  <xs:annotation>
-    <xs:documentation>
-[
-  {
-    "dataDictionary": {
-      "Title": "PDS4 Data Dictionary" ,
-      "Version": "1.14.0.0" ,
-      "Date": "Tue Aug 18 16:31:07 UTC 2020" ,
-      "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
-      "PropertyMapDictionary": [
-      ]
-    }
-  }
-]
-    </xs:documentation>
-  </xs:annotation>
 </xs:schema>
