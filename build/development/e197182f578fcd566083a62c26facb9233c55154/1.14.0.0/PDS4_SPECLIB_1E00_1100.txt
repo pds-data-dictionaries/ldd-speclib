@@ -1,13 +1,13 @@
 PDS4 Local Data Dictionary Processing Report
 
 Configuration:
-   LDDTool Version        11.3.2
-   LDD Version Id:        1.0.0.0
+   LDDTool Version        0.0.0
+   LDD Version Id:        1.1.0.0
    LDD Label Version Id:  1.0
    LDD Discipline (T/F):  true
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Tue Aug 18 16:31:07 UTC 2020
+   Time                   Fri Oct 09 16:35:47 UTC 2020
    Common Schema          [PDS4_PDS_1E00.xsd]
    Common Schematron      [PDS4_PDS_1E00.sch]
    IM Version Id:         1.14.0.0
@@ -32,128 +32,20 @@ Summary:
    Classes                6
    Attributes             55
    Associations           62
-   Error messages         5
-   Warning messages       5
-   Information messages   98
+   Error messages         0
+   Warning messages       0
+   Information messages   0
 
 Detailed validation messages
-   ERROR    Class:  - At least one value for pds:local_reference_type or pds:reference_type must be defined for speclib:Measurement_Instrument/pds:Internal_Reference.
-   ERROR    Class:  - At least one value for pds:local_reference_type or pds:reference_type must be defined for speclib:Ancillary_Product/pds:Internal_Reference.
-   ERROR    Attribute: <material_subtype> - The 'type' attribute must have at least one permissible value.
-   ERROR    Attribute: <mineral_subtype> - The 'type' attribute must have at least one permissible value.
-   ERROR    Attribute: <rock_subtype> - The 'type' attribute must have at least one permissible value.
-   WARNING  Attribute: <spectral_range_unit> - The terms 'unit', 'units', 'unit_of_measure' should not be used as the rightmost part of an attribute's name.
-   WARNING  Attribute: <spectral_resolution_width_unit> - The terms 'unit', 'units', 'unit_of_measure' should not be used as the rightmost part of an attribute's name.
-   WARNING  Attribute: <spectral_sampling_interval_unit> - The terms 'unit', 'units', 'unit_of_measure' should not be used as the rightmost part of an attribute's name.
-   INFO     Attribute: <measurement_atmosphere_composition> - A 'nilable' attribute was found that is not a required attribute in at least one class.
-   INFO     Attribute: <measurement_atmosphere_pressure> - A 'nilable' attribute was found that is not a required attribute in at least one class.
-   INFO     Attribute: <measurement_atmosphere_temperature> - A 'nilable' attribute was found that is not a required attribute in at least one class.
-   INFO     Attribute: <source_specimen_id> - A 'nilable' attribute was found that is not a required attribute in at least one class.
-   INFO     Attribute: <spectral_resolution_width_max> - A 'nilable' attribute was found that is not a required attribute in at least one class.
-   INFO     Attribute: <spectral_resolution_width_min> - A 'nilable' attribute was found that is not a required attribute in at least one class.
-   INFO     Attribute: <spectral_resolution_width_unit> - A 'nilable' attribute was found that is not a required attribute in at least one class.
-   INFO     Attribute: <spectral_sampling_interval_max> - A 'nilable' attribute was found that is not a required attribute in at least one class.
-   INFO     Attribute: <spectral_sampling_interval_min> - A 'nilable' attribute was found that is not a required attribute in at least one class.
-   INFO     Attribute: <spectral_sampling_interval_unit> - A 'nilable' attribute was found that is not a required attribute in at least one class.
-   INFO     Attribute: <volatile_type> - A 'nilable' attribute was found that is not a required attribute in at least one class.
-   WARNING  Header:  - New steward has been specified:geo
-   WARNING  Header:  - New namespace id has been specified:speclib
-   INFO     Attribute: <ancillary_product_type> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <ancillary_product_type> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <data_producer_name> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <data_producer_name> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <data_provider_name> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <data_provider_name> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <emission_angle> - The default minimum value provided by the attribute's data type is being overridden with -90
-   INFO     Attribute: <emission_angle> - The default maximum value provided by the attribute's data type is being overridden with 90
-   INFO     Attribute: <incidence_angle> - The default minimum value provided by the attribute's data type is being overridden with -90
-   INFO     Attribute: <incidence_angle> - The default maximum value provided by the attribute's data type is being overridden with 90
-   INFO     Attribute: <instrument_name> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <instrument_name> - The default maximum characters provided by the attribute's data type is being overridden with 100
-   INFO     Attribute: <instrument_name> - This local attribute has a duplicate in the PDS4 data dictionary.
-   INFO     Attribute: <material_common_name> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <material_common_name> - The default maximum characters provided by the attribute's data type is being overridden with 100
-   INFO     Attribute: <material_origin> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <material_origin> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <material_state> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <material_state> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <material_subtype> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <material_subtype> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <material_type> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <material_type> - The default maximum characters provided by the attribute's data type is being overridden with 30
-   INFO     Attribute: <measurement_atmosphere_composition> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <measurement_atmosphere_composition> - The default maximum characters provided by the attribute's data type is being overridden with 1000
-   INFO     Attribute: <measurement_atmosphere_description> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <measurement_atmosphere_description> - The default maximum characters provided by the attribute's data type is being overridden with 1000
-   INFO     Attribute: <measurement_atmosphere_relative_humidity> - The default minimum value provided by the attribute's data type is being overridden with 0
-   INFO     Attribute: <measurement_atmosphere_relative_humidity> - The default maximum value provided by the attribute's data type is being overridden with 100
-   INFO     Attribute: <measurement_geometry_type> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <measurement_geometry_type> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <measurement_notes> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <measurement_notes> - The default maximum characters provided by the attribute's data type is being overridden with 1000
-   INFO     Attribute: <measurement_reference_standard> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <measurement_reference_standard> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <measurement_requestor> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <measurement_requestor> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <measurement_source_description> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <measurement_source_description> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <measurement_type> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <measurement_type> - The default maximum characters provided by the attribute's data type is being overridden with 30
-   INFO     Attribute: <mineral_subtype> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <mineral_subtype> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <mineral_type> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <mineral_type> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <organic_type> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <organic_type> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <phase_angle> - The default minimum value provided by the attribute's data type is being overridden with -180
-   INFO     Attribute: <phase_angle> - The default maximum value provided by the attribute's data type is being overridden with 180
-   INFO     Attribute: <rock_subtype> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <rock_subtype> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <rock_type> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <rock_type> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <source_specimen_id> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <source_specimen_id> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <specimen_collection_location> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <specimen_collection_location> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <specimen_owner_location> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <specimen_owner_location> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <specimen_owner_name> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <specimen_owner_name> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <specimen_description> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <specimen_description> - The default maximum characters provided by the attribute's data type is being overridden with 1000
-   INFO     Attribute: <specimen_id> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <specimen_id> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <specimen_max_size> - The default minimum value provided by the attribute's data type is being overridden with 0
-   INFO     Attribute: <specimen_min_size> - The default minimum value provided by the attribute's data type is being overridden with 0
-   INFO     Attribute: <specimen_name> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <specimen_name> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <specimen_type> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <specimen_type> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <spectral_range_max> - The default minimum value provided by the attribute's data type is being overridden with 0
-   INFO     Attribute: <spectral_range_min> - The default minimum value provided by the attribute's data type is being overridden with 0
-   INFO     Attribute: <spectral_range_parameter_name> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <spectral_range_parameter_name> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <spectral_range_unit> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <spectral_range_unit> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <spectral_resolution_width_unit> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <spectral_resolution_width_unit> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <spectral_sampling_interval_unit> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <spectral_sampling_interval_unit> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <synthetic_processing_description> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <synthetic_processing_description> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <synthetic_type> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <synthetic_type> - The default maximum characters provided by the attribute's data type is being overridden with 255
-   INFO     Attribute: <volatile_type> - The default minimum characters provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <volatile_type> - The default maximum characters provided by the attribute's data type is being overridden with 255
 
 Parsed Input - Header:
    LDD Name               Spectral Library
-   LDD Version            1.0.0.0
+   LDD Version            1.1.0.0
    Full Name              Susan Slavney
    Steward                geo
    Namespace Id           speclib
    Comment                Post-peer-review
-   Last Modification Time 2020-04-21T15:54:00
+   Last Modification Time 2020-10-07T21:04:00
    PDS4 Merge Flag        false
 
 Parsed Input - Attributes:
@@ -479,10 +371,10 @@ Parsed Input - Attributes:
    minimum characters     1
    maximum characters     255
 
-   name                   spectral_range_unit
+   name                   spectral_range_unit_name
    version                1.14
    value data type        UTF8_Short_String_Collapsed
-   description            The spectral_range_unit element identifies the unit of measure for the values specified by spectral_range_min and spectral_range_max.
+   description            The spectral_range_unit_name element identifies the unit of measure for the values specified by spectral_range_min and spectral_range_max.
    minimum characters     1
    maximum characters     255
 
@@ -498,10 +390,10 @@ Parsed Input - Attributes:
    description            The spectral_resolution_width_min element identifies the minimum width of a spectral band in a given spectrum. If all bands are the same width, spectral_resolution_width_min and spectral_resolution_width_max will have the same value.
    nillable               true
 
-   name                   spectral_resolution_width_unit
+   name                   spectral_resolution_width_unit_name
    version                1.14
    value data type        UTF8_Short_String_Collapsed
-   description            The spectral_resolution_width_unit element identifies the unit of measure for the values specified by spectral_resolution_width_min and spectral_resolution_width_max.
+   description            The spectral_resolution_width_unit_name element identifies the unit of measure for the values specified by spectral_resolution_width_min and spectral_resolution_width_max.
    nillable               true
    minimum characters     1
    maximum characters     255
@@ -518,10 +410,10 @@ Parsed Input - Attributes:
    description            The spectral_sampling_interval_min element identifies the minimum distance between band centers in a given spectrum. If all band centers are equally spaced, spectral_sampling_interval_min and spectral_sampling_interval_max will have the same value.
    nillable               true
 
-   name                   spectral_sampling_interval_unit
+   name                   spectral_sampling_interval_unit_name
    version                1.14
    value data type        UTF8_Short_String_Collapsed
-   description            The spectral_sampling_interval_unit element identifies the unit of measure for the values specified by spectral_sampling_interval_min and spectral_sampling_interval_max.
+   description            The spectral_sampling_interval_unit_name element identifies the unit of measure for the values specified by spectral_sampling_interval_min and spectral_sampling_interval_max.
    nillable               true
    minimum characters     1
    maximum characters     255
@@ -601,7 +493,7 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      spectral_range_unit
+      local identifier      spectral_range_unit_name
       minimum occurrences   1
       maximum occurrences   1
       reference type        attribute_of
@@ -616,7 +508,7 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      spectral_sampling_interval_unit
+      local identifier      spectral_sampling_interval_unit_name
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
@@ -631,7 +523,7 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      spectral_resolution_width_unit
+      local identifier      spectral_resolution_width_unit_name
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of

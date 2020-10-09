@@ -3,7 +3,7 @@
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
       "Version": "1.14.0.0" ,
-      "Date": "Tue Aug 18 16:31:07 UTC 2020" ,
+      "Date": "Fri Oct 09 16:35:47 UTC 2020" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "classDictionary": [
         {
@@ -193,8 +193,8 @@
               }
             }
            , {"association": {
-                "identifier": "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.spectral_range_unit" ,
-                "title": "spectral_range_unit" ,
+                "identifier": "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.spectral_range_unit_name" ,
+                "title": "spectral_range_unit_name" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
@@ -204,7 +204,7 @@
                 "maximumCardinality": "1" ,
                 "classOrder": "1070" ,
                 "attributeId": [
-                  "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.spectral_range_unit"
+                  "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.spectral_range_unit_name"
                  ]
               }
             }
@@ -241,8 +241,8 @@
               }
             }
            , {"association": {
-                "identifier": "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.spectral_sampling_interval_unit" ,
-                "title": "spectral_sampling_interval_unit" ,
+                "identifier": "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.spectral_sampling_interval_unit_name" ,
+                "title": "spectral_sampling_interval_unit_name" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
@@ -252,7 +252,7 @@
                 "maximumCardinality": "1" ,
                 "classOrder": "1100" ,
                 "attributeId": [
-                  "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.spectral_sampling_interval_unit"
+                  "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.spectral_sampling_interval_unit_name"
                  ]
               }
             }
@@ -289,8 +289,8 @@
               }
             }
            , {"association": {
-                "identifier": "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.spectral_resolution_width_unit" ,
-                "title": "spectral_resolution_width_unit" ,
+                "identifier": "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.spectral_resolution_width_unit_name" ,
+                "title": "spectral_resolution_width_unit_name" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
@@ -300,7 +300,7 @@
                 "maximumCardinality": "1" ,
                 "classOrder": "1130" ,
                 "attributeId": [
-                  "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.spectral_resolution_width_unit"
+                  "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.spectral_resolution_width_unit_name"
                  ]
               }
             }
@@ -1113,6 +1113,80 @@
             "unitOfMeasureId": "null" ,
             "unitId": "null" ,
             "defaultUnitId": "null"
+          , "PermissibleValueList": [
+              {"PermissibleValue": {
+                  "value": "Attenuated Total Reflectance Spectroscopy" ,
+                  "valueMeaning": " IR spectroscopic technique in which placing a sample next to a high refractive index crystal causes total internal reflection resulting in an evanescent wave that samples shallow properties of the sample " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Chemical Composition" ,
+                  "valueMeaning": "Elemental or oxide abundances for samples" ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Differential Scanning Calorimetry" ,
+                  "valueMeaning": " Technique in which the sample is heated and temperature is monitored to evaluate exothermic and endothermic reactions that are indicative of composition " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Electron Microprobe Analysis" ,
+                  "valueMeaning": " Microprobe technique in which the sample is bombarded with electrons, with resultant X-ray emission spectra indicative of sample composition " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Image" ,
+                  "valueMeaning": " An image of the sample " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Modal Mineralogy" ,
+                  "valueMeaning": " Sample mineral abundances defined as weight or volume percentages " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Raman Spectroscopy" ,
+                  "valueMeaning": " Spectroscopic technique based on based on inelastic scattering of monochromatic light, usually from a laser source " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Reflectance Spectroscopy" ,
+                  "valueMeaning": " Spectroscopic technique based on measuring the spectral properties of light scattered from samples " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Thermogravimetric Analysis" ,
+                  "valueMeaning": " Technique in which sample mass is measured as its temperature is increased " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Transmission Spectroscopy" ,
+                  "valueMeaning": " Spectroscopic technique based on measuring the spectral properties of light transmitted through samples " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "X-ray Diffraction" ,
+                  "valueMeaning": " X-rays diffracted by a sample as a function of incident angle are used to determine sample crystal structure " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "X-ray Fluorescence" ,
+                  "valueMeaning": " Spectroscopic technique in which the sample is bombarded by high-energy X-rays or gamma rays, with fluorescent X-ray emission spectra indicative of sample composition " ,
+                  "isDeprecated": "false"
+                }
+             }
+           ]
           }
         }
       , {
@@ -1413,6 +1487,38 @@
             "unitOfMeasureId": "null" ,
             "unitId": "null" ,
             "defaultUnitId": "null"
+          , "PermissibleValueList": [
+              {"PermissibleValue": {
+                  "value": "Biconical" ,
+                  "valueMeaning": " Measurement taken when light is sent in to the specimen at a certain direction and in a cone-like shape and received at a certain direction and in a cone-like shape. " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Bidirectional" ,
+                  "valueMeaning": " Measurement taken when light is sent in to the specimen at a narrow angular range and received over a narrow angular range " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Directional Hemispherical" ,
+                  "valueMeaning": " Measurement taken when light is sent in to the specimen at a certain direction and received in all directions (perhaps in an integrating sphere). " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Hemispherical Hemispherical" ,
+                  "valueMeaning": " Measurement taken when light is sent in to the specimen at all directions and received in all directions (perhaps in an integrating sphere) " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Unknown" ,
+                  "valueMeaning": "The measurement geometry is unknown." ,
+                  "isDeprecated": "false"
+                }
+             }
+           ]
           }
         }
       , {
@@ -1538,6 +1644,56 @@
             "unitOfMeasureId": "null" ,
             "unitId": "null" ,
             "defaultUnitId": "null"
+          , "PermissibleValueList": [
+              {"PermissibleValue": {
+                  "value": "Attenuated Total Reflectance" ,
+                  "valueMeaning": "Attenuated total reflectance (ATR) is a sampling technique used in conjunction with infrared spectroscopy which enables samples to be examined directly in the solid or liquid state without further preparation." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Emission" ,
+                  "valueMeaning": "The Emission value indicates emission spectroscpy, which examines the wavelengths emitted by atoms or molecules during their transition from an excited state to a lower energy state." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "LIBS" ,
+                  "valueMeaning": "LIBS (Laser-Induced Breakdown Spectroscopy) uses a highly energetic laser pulse as its excitation source to produce emission spectra." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Raman" ,
+                  "valueMeaning": "The Raman value indicates Raman spectroscopy, which determines information about a material by studying the Raman scattering of monochromatic light off the material." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Reflectance" ,
+                  "valueMeaning": "The Reflectance value indicates reflectance spectroscopy, the study of light as a function of wavelength that has been reflected or scattered from a material." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Transmission" ,
+                  "valueMeaning": "The Transmission value indicates transmission spectroscopy, the study of light as a function of wavelength that has been transmitted through a material." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "X-Ray Diffraction" ,
+                  "valueMeaning": "The X-Ray Diffraction value indicates x-ray diffraction spectroscopy, which studies the diffraction patterns of x-rays scattered off a material." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "X-Ray Fluorescence" ,
+                  "valueMeaning": "The X-Ray Fluorescence value indicates x-ray flourescence spectroscopy, which examines the emission of x-rays from a material previously bombarded with high energy x-rays or gamma rays." ,
+                  "isDeprecated": "false"
+                }
+             }
+           ]
           }
         }
       , {
@@ -1663,17 +1819,55 @@
             "unitOfMeasureId": "null" ,
             "unitId": "null" ,
             "defaultUnitId": "null"
+          , "PermissibleValueList": [
+              {"PermissibleValue": {
+                  "value": "Angle" ,
+                  "valueMeaning": "The Angle value means the spectra is a function of angle." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Energy" ,
+                  "valueMeaning": "The Energy value means the spectra is a function of energy." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Frequency" ,
+                  "valueMeaning": "The Frequency value means the spectrum is a function of frequency." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Time" ,
+                  "valueMeaning": "The Time value means the spectra is a function of time." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Wavelength" ,
+                  "valueMeaning": "The Wavelength value means the spectrum is a function of wavelength." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Wavenumber" ,
+                  "valueMeaning": "The Wavenumber value means the spectrum is a function of wavenumber." ,
+                  "isDeprecated": "false"
+                }
+             }
+           ]
           }
         }
       , {
           "attribute": {
-            "identifier": "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.spectral_range_unit" ,
-            "title": "spectral_range_unit" ,
+            "identifier": "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.spectral_range_unit_name" ,
+            "title": "spectral_range_unit_name" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "speclib" ,
             "steward": "geo" ,
             "versionId": "1.14" ,
-            "description": "The spectral_range_unit element identifies the unit of measure for the values specified by spectral_range_min and spectral_range_max." ,
+            "description": "The spectral_range_unit_name element identifies the unit of measure for the values specified by spectral_range_min and spectral_range_max." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
@@ -1742,13 +1936,13 @@
         }
       , {
           "attribute": {
-            "identifier": "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.spectral_resolution_width_unit" ,
-            "title": "spectral_resolution_width_unit" ,
+            "identifier": "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.spectral_resolution_width_unit_name" ,
+            "title": "spectral_resolution_width_unit_name" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "speclib" ,
             "steward": "geo" ,
             "versionId": "1.14" ,
-            "description": "The spectral_resolution_width_unit element identifies the unit of measure for the values specified by spectral_resolution_width_min and spectral_resolution_width_max." ,
+            "description": "The spectral_resolution_width_unit_name element identifies the unit of measure for the values specified by spectral_resolution_width_min and spectral_resolution_width_max." ,
             "isNillable": "true" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
@@ -1817,13 +2011,13 @@
         }
       , {
           "attribute": {
-            "identifier": "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.spectral_sampling_interval_unit" ,
-            "title": "spectral_sampling_interval_unit" ,
+            "identifier": "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.spectral_sampling_interval_unit_name" ,
+            "title": "spectral_sampling_interval_unit_name" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "speclib" ,
             "steward": "geo" ,
             "versionId": "1.14" ,
-            "description": "The spectral_sampling_interval_unit element identifies the unit of measure for the values specified by spectral_sampling_interval_min and spectral_sampling_interval_max." ,
+            "description": "The spectral_sampling_interval_unit_name element identifies the unit of measure for the values specified by spectral_sampling_interval_min and spectral_sampling_interval_max." ,
             "isNillable": "true" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
@@ -1888,6 +2082,20 @@
             "unitOfMeasureId": "null" ,
             "unitId": "null" ,
             "defaultUnitId": "null"
+          , "PermissibleValueList": [
+              {"PermissibleValue": {
+                  "value": "Natural" ,
+                  "valueMeaning": "The Natural value indicates that the specimen was not made in a laboratory." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Synthetic" ,
+                  "valueMeaning": "The Synthetic value indicates that the specimen was made in a laboratory. A synthetic sample could be either a physical mixture of natural materials or a laboratory synthesized material." ,
+                  "isDeprecated": "false"
+                }
+             }
+           ]
           }
         }
       , {
@@ -1913,6 +2121,26 @@
             "unitOfMeasureId": "null" ,
             "unitId": "null" ,
             "defaultUnitId": "null"
+          , "PermissibleValueList": [
+              {"PermissibleValue": {
+                  "value": "Gas" ,
+                  "valueMeaning": "The Gas value indicates that the specimen is in the gas state." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Liquid" ,
+                  "valueMeaning": "The Liquid value indicates that the specimen is in the liquid state." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Solid" ,
+                  "valueMeaning": "The Solid value indicates that the specimen is in the solid state." ,
+                  "isDeprecated": "false"
+                }
+             }
+           ]
           }
         }
       , {
@@ -1963,6 +2191,62 @@
             "unitOfMeasureId": "null" ,
             "unitId": "null" ,
             "defaultUnitId": "null"
+          , "PermissibleValueList": [
+              {"PermissibleValue": {
+                  "value": "Amorphous" ,
+                  "valueMeaning": " Sample without crystalline structure or long range order, e.g., glass " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Consolidated Mixture" ,
+                  "valueMeaning": " Sample that is cemented or otherwise aggregated into a solid mass " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Element" ,
+                  "valueMeaning": " Sample composed of a single element such as metallic iron " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Ice" ,
+                  "valueMeaning": " Solid sample composed of gas or liquid (e.g., water vapor or water) now in solid form " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Mineral" ,
+                  "valueMeaning": " Sample with a given composition within a defined range of compositions and that exhibits a defined crystalline structure " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Organic" ,
+                  "valueMeaning": " Sample composed of organic materials " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Rock" ,
+                  "valueMeaning": " Solid sample composed of one or more minerals " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Single Particle" ,
+                  "valueMeaning": " Sample composed of a single particle " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Unconsolidated Mixture" ,
+                  "valueMeaning": " Sample of loose or disaggregated material that is a mixture of various minerals and\/or other compounds " ,
+                  "isDeprecated": "false"
+                }
+             }
+           ]
           }
         }
       , {
@@ -2013,6 +2297,140 @@
             "unitOfMeasureId": "null" ,
             "unitId": "null" ,
             "defaultUnitId": "null"
+          , "PermissibleValueList": [
+              {"PermissibleValue": {
+                  "value": "Arsenate" ,
+                  "valueMeaning": "The Arsenate value indicates the specimen is an arsenate." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Borate" ,
+                  "valueMeaning": "The Borate valeu indicates the specimen is a borate." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Carbonate" ,
+                  "valueMeaning": "The Carbonate value indicates the specimen is a carbonate." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Chromate" ,
+                  "valueMeaning": "The Chromate value indicates the specimen is a chromate." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Cyclosilicate" ,
+                  "valueMeaning": "The Cyclosiliate value indicates the specimen is a sorosilicate." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Halide" ,
+                  "valueMeaning": "The Halide value indicates the specimen is a halide." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Hydroxide" ,
+                  "valueMeaning": "The Hydroxide value indicates the specimen is a hydroxide." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Inosilicate" ,
+                  "valueMeaning": "The Inosilicate value indicates the specimen is a inosilicate." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Iodate" ,
+                  "valueMeaning": "The Iodate value indicates the specimen is an iodate." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Native Element" ,
+                  "valueMeaning": "The Native Element value indicates the specimen is a native element or an alloy." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Nesosilicate" ,
+                  "valueMeaning": "The Nesosiliacte value indicates the specimen is a nesosilicate." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Nitrate" ,
+                  "valueMeaning": "The Nitrate value indicates the specimen is a nitrate." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Organic Compound" ,
+                  "valueMeaning": "The Organic Compound value indicates the specimen is an organic compound." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Oxide" ,
+                  "valueMeaning": "The Oxide value indicates the specimen is an oxide." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Phosphate" ,
+                  "valueMeaning": "The Phosphate value indicates the specimen is a sulfate." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Phyllosilicate" ,
+                  "valueMeaning": "The Phyllosilicate value indicates the specimen is a phyllosilicate." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Sorosilicate" ,
+                  "valueMeaning": "The Sorosilicate value indicates the specimen is a sorosilicate." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Sulfate" ,
+                  "valueMeaning": "The Sulfate value indicates the specimen is a sulfate." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Sulfide" ,
+                  "valueMeaning": "The Sulfide value indicates the specimen is a sulfide." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Tectosilicate" ,
+                  "valueMeaning": "The Tectosilicate value indicates the specimen is a tectosilicate." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Unclassified" ,
+                  "valueMeaning": "The Unclassified value indicates that the specimen doesn't fit into any of these categories, but is still a mineral." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Vanadate" ,
+                  "valueMeaning": "The Vanadate value indicates that the specimen is a vanadate." ,
+                  "isDeprecated": "false"
+                }
+             }
+           ]
           }
         }
       , {
@@ -2038,6 +2456,26 @@
             "unitOfMeasureId": "null" ,
             "unitId": "null" ,
             "defaultUnitId": "null"
+          , "PermissibleValueList": [
+              {"PermissibleValue": {
+                  "value": "Inorganic" ,
+                  "valueMeaning": "The Inorganic value indicates the specimen is not an organic material." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Mixture" ,
+                  "valueMeaning": "The Mixture value indicates the specimen is a mixture of organic and inorganic material." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Organic" ,
+                  "valueMeaning": "The Organic value indicates the specimen is an organic material." ,
+                  "isDeprecated": "false"
+                }
+             }
+           ]
           }
         }
       , {
@@ -2088,6 +2526,32 @@
             "unitOfMeasureId": "null" ,
             "unitId": "null" ,
             "defaultUnitId": "null"
+          , "PermissibleValueList": [
+              {"PermissibleValue": {
+                  "value": "Igneous" ,
+                  "valueMeaning": " The Igneous value indicates that the specimen is volatile-poor and was formed by the cooling of magma or lava. " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Metamorphic" ,
+                  "valueMeaning": " The Metamorphic value indicates that the specimen was formed by metamorphic processes (e.g., increased temperature and\/or pressure conditions that altered the rock composition without melting) " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Sedimentary" ,
+                  "valueMeaning": " The Sedimentary value indicates that the specimen was formed by sedimentary processes (e.g., lithification of unconsolidated material, direct chemical precipitation) " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Unknown" ,
+                  "valueMeaning": " The Unknown value indicates that there is not enough information about the specimen to assign it a rock type " ,
+                  "isDeprecated": "false"
+                }
+             }
+           ]
           }
         }
       , {
@@ -2113,6 +2577,50 @@
             "unitOfMeasureId": "null" ,
             "unitId": "null" ,
             "defaultUnitId": "null"
+          , "PermissibleValueList": [
+              {"PermissibleValue": {
+                  "value": "Lunar Meteorite" ,
+                  "valueMeaning": "The Lunar Meteorite value means the specimen is a sample from a lunar meteorite." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Mars Meteorite" ,
+                  "valueMeaning": "The Mars Meteorite value means the specimen is a sample from a Mars meteorite." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Other Meteorite" ,
+                  "valueMeaning": "The Other Meteorite value means the specimen is a sample from a meteorite that is not a lunar or Mars meteorite." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Returned Asteroid Sample" ,
+                  "valueMeaning": "The Returned Asteroid Sample value means the specimen is an asteroid sample returned by a mission." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Returned Lunar Sample" ,
+                  "valueMeaning": "The Returned Lunar Sample value means the specimen is a lunar sample returned by a mission." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Synthetic Sample" ,
+                  "valueMeaning": "The Synthetic Sample value means the specimen is a laboratory-generated sample." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Terrestrial Sample" ,
+                  "valueMeaning": "The Terrestrial value means the specimen is a terrestrial sample." ,
+                  "isDeprecated": "false"
+                }
+             }
+           ]
           }
         }
       , {
@@ -2163,6 +2671,32 @@
             "unitOfMeasureId": "null" ,
             "unitId": "null" ,
             "defaultUnitId": "null"
+          , "PermissibleValueList": [
+              {"PermissibleValue": {
+                  "value": "Entirely Synthetic" ,
+                  "valueMeaning": "Sample that is entirely human-made" ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "From Natural" ,
+                  "valueMeaning": " A natural product chemically or mineralogically altered by a laboratory treatment (e.g., heating). Does not include size and magnetic separates of natural samples or washing by water. " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Hardware" ,
+                  "valueMeaning": " Portions of an instrument, e.g., portions of a spectrometer that contribute to a spectroscopic signature and thus need to be characterized " ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Natural and Synthetic" ,
+                  "valueMeaning": " Sample that is a mixture of human-made and naturally occurring components " ,
+                  "isDeprecated": "false"
+                }
+             }
+           ]
           }
         }
       , {
@@ -2188,6 +2722,26 @@
             "unitOfMeasureId": "null" ,
             "unitId": "null" ,
             "defaultUnitId": "null"
+          , "PermissibleValueList": [
+              {"PermissibleValue": {
+                  "value": "Poor" ,
+                  "valueMeaning": "The Poor value indicates the specimen had less than 2.0% LOI." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Rich" ,
+                  "valueMeaning": "The Rich value indicates the specimen had greater than 2.0% LOI." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Unknown" ,
+                  "valueMeaning": "The Unknown value indicates the specimen's volatile type is unknown." ,
+                  "isDeprecated": "false"
+                }
+             }
+           ]
           }
         }
       , {

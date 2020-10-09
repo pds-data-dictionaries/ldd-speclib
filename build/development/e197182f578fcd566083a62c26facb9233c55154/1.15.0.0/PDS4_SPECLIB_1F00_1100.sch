@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:speclib  Version:1.0.0.0 - Tue Aug 18 16:31:07 UTC 2020 -->
-  <!-- Generated from the PDS4 Information Model Version 1.14.0.0 - System Build 10b -->
+  <!-- PDS4 Schematron for Name Space Id:speclib  Version:1.1.0.0 - Fri Oct 09 16:35:46 UTC 2020 -->
+  <!-- Generated from the PDS4 Information Model Version 1.15.0.0 - System Build 11a -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
 
@@ -18,6 +18,12 @@
 		   <!--        lists. These two types of rules have been -->
 		   <!--        merged together in the rules below.       -->
 		   <!-- ================================================ -->
+  <sch:pattern>
+    <sch:rule context="reference_type">
+      <sch:assert test=". = ('data_to_ancillary_data')">
+        The attribute reference_type:reference_type must be equal to the value 'data_to_ancillary_data'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
   <sch:pattern>
     <sch:rule context="speclib:Ancillary_Product/speclib:ancillary_product_type">
       <sch:assert test=". = ('Attenuated Total Reflectance Spectroscopy', 'Chemical Composition', 'Differential Scanning Calorimetry', 'Electron Microprobe Analysis', 'Image', 'Modal Mineralogy', 'Raman Spectroscopy', 'Reflectance Spectroscopy', 'Thermogravimetric Analysis', 'Transmission Spectroscopy', 'X-ray Diffraction', 'X-ray Fluorescence')">

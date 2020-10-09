@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model 
-    href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1B00.sch"
+    href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1F00.sch"
     schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
 <!-- 
-    4/21/20 SHS: Post-peer-review version          
+    10/8/20 SHS: Revised for release of IM 1.15.0.0          
+    Changes:
+    1. Added <dictionary_type>Discipline</dictionary_type>
+    2. For Measurement_Instrument and Ancillary_Product classes,
+       used <DD_Associate_External_Class> to define Internal_Reference.
+    3. Changed attribute names:
+        spectral_range_unit -> spectral_range_unit_name
+        spectral_sampling_interval_unit -> spectral_sampling_interval_unit_name
+        spectral_resolution_width_unit -> spectral_resolution_width_unit_name
 
     The SPECLIB dictionary contains classes and attributes specific to
     spectral reflectance measurements of laboratory specimens.
     
-    SPECLIB version 1.0.0.0 last updated 2019-11-22
-    PDS Build 1.11.0.0
-    LDDTool version 9.0.0
-    Built with lddtool -plcamJs1 lddtool_SPECLIB.xml
+    SPECLIB version 1.11.0.0 last updated 2020-10-08
+    PDS Build 1.15.0.0
+    LDDTool version 11.4.0-SNAPSHOT
+    Built with lddtool -plJ PDS4_SPECLIB_IngestLDD.xml
               
               
 -->
@@ -20,14 +28,15 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
     xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 
-                        http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1B00.xsd">
+                        http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1F00.xsd">
     <name>Spectral Library</name>
-    <ldd_version_id>1.0.0.0</ldd_version_id>
+    <ldd_version_id>1.1.0.0</ldd_version_id>
+    <dictionary_type>Discipline</dictionary_type>
     <full_name>Susan Slavney</full_name>
     <steward_id>geo</steward_id>
     <namespace_id>speclib</namespace_id>
     <comment>Post-peer-review</comment>
-    <last_modification_date_time>2020-04-21T15:54:00</last_modification_date_time>
+    <last_modification_date_time>2020-10-07T21:04:00</last_modification_date_time>
     <!-- Begin definitions of Spectral Library attributes  -->
     <!-- Definitions for attributes of these Spectral Library classes:
            Spectral Library Product superclass
@@ -86,13 +95,13 @@
           spectral_range_max
           spectral_range_min
           spectral_range_parameter_name
-          spectral_range_unit
+          spectral_range_unit_name
           spectral_resolution_width_min
           spectral_resolution_width_max
-          spectral_resolution_width_unit
+          spectral_resolution_width_unit_name
           spectral_sampling_interval_min
           spectral_sampling_interval_max
-          spectral_sampling_interval_unit
+          spectral_sampling_interval_unit_name
           synthetic_processing_description
           synthetic_type
           volatile_type
@@ -1212,12 +1221,12 @@
         </DD_Value_Domain>
     </DD_Attribute>
     <DD_Attribute>
-        <name>spectral_range_unit</name>
+        <name>spectral_range_unit_name</name>
         <version_id>0.1</version_id>
-        <local_identifier>spectral_range_unit</local_identifier>
+        <local_identifier>spectral_range_unit_name</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Susan Slavney</submitter_name>
-        <definition>The spectral_range_unit element identifies the unit of measure for the
+        <definition>The spectral_range_unit_name element identifies the unit of measure for the
             values specified by spectral_range_min and spectral_range_max.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -1257,12 +1266,12 @@
         </DD_Value_Domain>
     </DD_Attribute>
     <DD_Attribute>
-        <name>spectral_resolution_width_unit</name>
+        <name>spectral_resolution_width_unit_name</name>
         <version_id>0.1</version_id>
-        <local_identifier>spectral_resolution_width_unit</local_identifier>
+        <local_identifier>spectral_resolution_width_unit_name</local_identifier>
         <nillable_flag>true</nillable_flag>
         <submitter_name>Susan Slavney</submitter_name>
-        <definition>The spectral_resolution_width_unit element identifies the unit of 
+        <definition>The spectral_resolution_width_unit_name element identifies the unit of 
             measure for the values specified by spectral_resolution_width_min and
             spectral_resolution_width_max.</definition>
         <DD_Value_Domain>
@@ -1303,12 +1312,12 @@
         </DD_Value_Domain>
     </DD_Attribute>
     <DD_Attribute>
-        <name>spectral_sampling_interval_unit</name>
+        <name>spectral_sampling_interval_unit_name</name>
         <version_id>0.1</version_id>
-        <local_identifier>spectral_sampling_interval_unit</local_identifier>
+        <local_identifier>spectral_sampling_interval_unit_name</local_identifier>
         <nillable_flag>true</nillable_flag>
         <submitter_name>Susan Slavney</submitter_name>
-        <definition>The spectral_sampling_interval_unit element identifies the unit of 
+        <definition>The spectral_sampling_interval_unit_name element identifies the unit of 
             measure for the values specified by spectral_sampling_interval_min and
             spectral_sampling_interval_max.</definition>
         <DD_Value_Domain>
@@ -1424,13 +1433,31 @@
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
-        <DD_Association>
-            <!--        LID or LIDVID of instrument that took the measurement -->
+        <DD_Associate_External_Class>
+            <namespace_id>pds</namespace_id>
+            <class_name>Internal_Reference</class_name>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+            <DD_Context_Value_List>
+                <attribute_name>reference_type</attribute_name>
+                <attribute_relative_xpath>reference_type</attribute_relative_xpath>
+                <DD_Permissible_Value>
+                    <value>measurement_parameters_to_instrument</value>
+                    <value_meaning>
+                        The measurement parameters are relevant to 
+                        the instrument identified by the given LID.
+                    </value_meaning>
+                </DD_Permissible_Value>
+            </DD_Context_Value_List>
+        </DD_Associate_External_Class>
+<!--    <DD_Association>
+            LID or LIDVID of instrument that took the measurement 
             <identifier_reference>pds.Internal_Reference</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
+-->
     </DD_Class>
     <!-- End definition of Measurement_Instrument class -->
 
@@ -1442,13 +1469,13 @@
             spectral_range_parameter_name (R)
             spectral_range_min (R)
             spectral_range_max (R)
-            spectral_range_unit (R)
+            spectral_range_unit_name (R)
             spectral_sampling_interval_min (O/N)
             spectral_sampling_interval_max (O/N)
-            spectral_sampling_interval_unit (O/N)
+            spectral_sampling_interval_unit_name (O/N)
             spectral_resolution_width_min (O/N)
             spectral_resolution_width_max (O/N)
-            spectral_resolution_width_unit (O/N)
+            spectral_resolution_width_unit_name (O/N)
             measurement_reference_standard (O)
             measurement_geometry_type (R)
             incidence_angle (R/N)
@@ -1512,7 +1539,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>spectral_range_unit</identifier_reference>
+            <identifier_reference>spectral_range_unit_name</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
@@ -1530,7 +1557,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>spectral_sampling_interval_unit</identifier_reference>
+            <identifier_reference>spectral_sampling_interval_unit_name</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
@@ -1548,7 +1575,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>spectral_resolution_width_unit</identifier_reference>
+            <identifier_reference>spectral_resolution_width_unit_name</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
@@ -1863,13 +1890,32 @@
             related to a Spectral Library specimen.</definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
-        <!-- LID or LIDVID of ancillary product -->
+        <DD_Associate_External_Class>
+            <namespace_id>pds</namespace_id>
+            <class_name>Internal_Reference</class_name>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+            <DD_Context_Value_List>
+                <attribute_name>reference_type</attribute_name>
+                <attribute_relative_xpath>reference_type</attribute_relative_xpath>
+                <DD_Permissible_Value>
+                    <value>data_to_ancillary_data</value>
+                    <value_meaning>
+                        The data product has an associated ancillary data product
+                        identified by the given LID.
+                    </value_meaning>
+                </DD_Permissible_Value>
+            </DD_Context_Value_List>
+        </DD_Associate_External_Class>
+        <!-- 
+        LID or LIDVID of ancillary product
         <DD_Association>
             <identifier_reference>pds.Internal_Reference</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
+-->
         <DD_Association>
             <identifier_reference>ancillary_product_type</identifier_reference>
             <reference_type>attribute_of</reference_type>
