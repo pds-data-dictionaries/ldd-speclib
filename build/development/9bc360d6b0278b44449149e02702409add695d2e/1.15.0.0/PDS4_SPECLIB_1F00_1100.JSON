@@ -2,9 +2,11 @@
   {
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
-      "Version": "1.15.0.0" ,
-      "Date": "Wed Oct 14 02:55:48 UTC 2020" ,
+      "IM Version": "1.15.0.0" ,
+      "LDD Version": "1.1.0.0" ,
+      "Date": "Tue May 04 05:13:42 UTC 2021" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
+      "namespaces": ["pds:", "speclib:"] ,
       "classDictionary": [
         {
           "class": {
@@ -28,15 +30,15 @@
                 "groupName": "null" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1020" ,
+                "classOrder": "1030" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.speclib.Ancillary_Product.speclib.ancillary_product_type"
                  ]
               }
             }
            , {"association": {
-                "identifier": "0001_NASA_PDS_1.speclib.Ancillary_Product.pds.Internal_Reference" ,
-                "title": "Internal_Reference" ,
+                "identifier": "0001_NASA_PDS_1.speclib.Ancillary_Product.speclib.Ancillary_Product_Internal_Reference" ,
+                "title": "Ancillary_Product_Internal_Reference" ,
                 "assocType": "component_of" ,
                 "isAttribute": "false" ,
                 "isChoice": "false" ,
@@ -44,9 +46,40 @@
                 "groupName": "null" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1010" ,
+                "classOrder": "1020" ,
                 "classId": [
-                  "0001_NASA_PDS_1.pds.Internal_Reference"
+                  "0001_NASA_PDS_1.speclib.Ancillary_Product.pds.Internal_Reference"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
+            "identifier": "0001_NASA_PDS_1.speclib.Ancillary_Product.pds.Internal_Reference" ,
+            "title": "Ancillary_Product_Internal_Reference" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "speclib" ,
+            "steward": "geo" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": "The Internal_Reference class is used to cross-reference other products in PDS4-compliant registries of PDS and its recognized international partners."
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.speclib.Ancillary_Product.speclib.Ancillary_Product_reference_type" ,
+                "title": "reference_type" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.speclib.Ancillary_Product.speclib.Ancillary_Product_reference_type"
                  ]
               }
             }
@@ -82,8 +115,8 @@
               }
             }
            , {"association": {
-                "identifier": "0001_NASA_PDS_1.speclib.Measurement_Instrument.pds.Internal_Reference" ,
-                "title": "Internal_Reference" ,
+                "identifier": "0001_NASA_PDS_1.speclib.Measurement_Instrument.speclib.Measurement_Instrument_Internal_Reference" ,
+                "title": "Measurement_Instrument_Internal_Reference" ,
                 "assocType": "component_of" ,
                 "isAttribute": "false" ,
                 "isChoice": "false" ,
@@ -91,9 +124,40 @@
                 "groupName": "null" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1020" ,
+                "classOrder": "1030" ,
                 "classId": [
-                  "0001_NASA_PDS_1.pds.Internal_Reference"
+                  "0001_NASA_PDS_1.speclib.Measurement_Instrument.pds.Internal_Reference"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
+            "identifier": "0001_NASA_PDS_1.speclib.Measurement_Instrument.pds.Internal_Reference" ,
+            "title": "Measurement_Instrument_Internal_Reference" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "speclib" ,
+            "steward": "geo" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": "The Internal_Reference class is used to cross-reference other products in PDS4-compliant registries of PDS and its recognized international partners."
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.speclib.Measurement_Instrument.speclib.Measurement_Instrument_reference_type" ,
+                "title": "reference_type" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.speclib.Measurement_Instrument.speclib.Measurement_Instrument_reference_type"
                  ]
               }
             }
