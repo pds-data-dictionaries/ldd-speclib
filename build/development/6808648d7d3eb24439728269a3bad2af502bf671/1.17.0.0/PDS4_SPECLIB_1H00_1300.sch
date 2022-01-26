@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:speclib  Version:1.1.0.0 - Mon Nov 01 16:37:32 UTC 2021 -->
-  <!-- Generated from the PDS4 Information Model Version 1.14.0.0 - System Build 10b -->
+  <!-- PDS4 Schematron for Name Space Id:speclib  Version:1.3.0.0 - Fri Dec 17 19:15:53 UTC 2021 -->
+  <!-- Generated from the PDS4 Information Model Version 1.17.0.0 - System Build 12.0 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
 
@@ -19,13 +19,6 @@
 		   <!--        merged together in the rules below.       -->
 		   <!-- ================================================ -->
   <sch:pattern>
-    <sch:rule context="speclib:Ancillary_Product/pds:Internal_Reference/pds:reference_type">
-      <sch:assert test=". = ('data_to_ancillary_data')">
-        <title>speclib:Ancillary_Product/pds:Internal_Reference/pds:reference_type/speclib:Ancillary_Product_Internal_Reference_reference_type</title>
-        The attribute speclib:Ancillary_Product/pds:Internal_Reference/pds:reference_type must be equal to the value 'data_to_ancillary_data'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
     <sch:rule context="speclib:Ancillary_Product/speclib:ancillary_product_type">
       <sch:assert test=". = ('Attenuated Total Reflectance Spectroscopy', 'Chemical Composition', 'Differential Scanning Calorimetry', 'Electron Microprobe Analysis', 'Image', 'Modal Mineralogy', 'Raman Spectroscopy', 'Reflectance Spectroscopy', 'Thermogravimetric Analysis', 'Transmission Spectroscopy', 'X-ray Diffraction', 'X-ray Fluorescence')">
         <title>speclib:Ancillary_Product/speclib:ancillary_product_type/speclib:ancillary_product_type</title>
@@ -33,10 +26,17 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:rule context="speclib:Measurement_Instrument/pds:Internal_Reference/pds:reference_type">
-      <sch:assert test=". = ('measurement_parameters_to_instrument')">
-        <title>speclib:Measurement_Instrument/pds:Internal_Reference/pds:reference_type/speclib:Measurement_Instrument_Internal_Reference_reference_type</title>
-        The attribute speclib:Measurement_Instrument/pds:Internal_Reference/pds:reference_type must be equal to the value 'measurement_parameters_to_instrument'.</sch:assert>
+    <sch:rule context="speclib:Measurement_Parameters/speclib:accumulation_time">
+      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr')">
+        <title>speclib:Measurement_Parameters/speclib:accumulation_time/speclib:accumulation_time</title>
+        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="speclib:Measurement_Parameters/speclib:dark_subtraction_flag">
+      <sch:assert test=". = ('N', 'Y')">
+        <title>speclib:Measurement_Parameters/speclib:dark_subtraction_flag/speclib:dark_subtraction_flag</title>
+        The attribute speclib:Measurement_Parameters/speclib:dark_subtraction_flag must be equal to one of the following values 'N', 'Y'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -51,6 +51,27 @@
       <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad')">
         <title>speclib:Measurement_Parameters/speclib:incidence_angle/speclib:incidence_angle</title>
         The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="speclib:Measurement_Parameters/speclib:laser_attenuation">
+      <sch:assert test="@unit = ('J', 'MeV', 'eV', 'keV')">
+        <title>speclib:Measurement_Parameters/speclib:laser_attenuation/speclib:laser_attenuation</title>
+        The attribute @unit must be equal to one of the following values 'J', 'MeV', 'eV', 'keV'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="speclib:Measurement_Parameters/speclib:laser_repetition_rate">
+      <sch:assert test="@unit = ('GHz', 'Hz', 'MHz', 'THz', 'kHz', 'mHz')">
+        <title>speclib:Measurement_Parameters/speclib:laser_repetition_rate/speclib:laser_repetition_rate</title>
+        The attribute @unit must be equal to one of the following values 'GHz', 'Hz', 'MHz', 'THz', 'kHz', 'mHz'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="speclib:Measurement_Parameters/speclib:laser_wavelength">
+      <sch:assert test="@unit = ('AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm')">
+        <title>speclib:Measurement_Parameters/speclib:laser_wavelength/speclib:laser_wavelength</title>
+        The attribute @unit must be equal to one of the following values 'AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -69,16 +90,16 @@
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="speclib:Measurement_Parameters/speclib:measurement_geometry_type">
-      <sch:assert test=". = ('Biconical', 'Bidirectional', 'Directional Hemispherical', 'Hemispherical Hemispherical', 'Unknown')">
+      <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('Biconical', 'Bidirectional', 'Directional Hemispherical', 'Hemispherical Hemispherical', 'Unknown')))) then false() else true()">
         <title>speclib:Measurement_Parameters/speclib:measurement_geometry_type/speclib:measurement_geometry_type</title>
-        The attribute speclib:Measurement_Parameters/speclib:measurement_geometry_type must be equal to one of the following values 'Biconical', 'Bidirectional', 'Directional Hemispherical', 'Hemispherical Hemispherical', 'Unknown'.</sch:assert>
+        The attribute speclib:Measurement_Parameters/speclib:measurement_geometry_type must be nulled or equal to one of the following values 'Biconical', 'Bidirectional', 'Directional Hemispherical', 'Hemispherical Hemispherical', 'Unknown'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="speclib:Measurement_Parameters/speclib:measurement_type">
-      <sch:assert test=". = ('Attenuated Total Reflectance', 'Emission', 'LIBS', 'Raman', 'Reflectance', 'Transmission', 'X-Ray Diffraction', 'X-Ray Fluorescence')">
+      <sch:assert test=". = ('Attenuated Total Reflectance', 'Emission', 'LIBS', 'Raman', 'Reflectance', 'Transmission', 'X-Ray Absorption Near-Edge Structure', 'X-Ray Diffraction', 'X-Ray Fluorescence')">
         <title>speclib:Measurement_Parameters/speclib:measurement_type/speclib:measurement_type</title>
-        The attribute speclib:Measurement_Parameters/speclib:measurement_type must be equal to one of the following values 'Attenuated Total Reflectance', 'Emission', 'LIBS', 'Raman', 'Reflectance', 'Transmission', 'X-Ray Diffraction', 'X-Ray Fluorescence'.</sch:assert>
+        The attribute speclib:Measurement_Parameters/speclib:measurement_type must be equal to one of the following values 'Attenuated Total Reflectance', 'Emission', 'LIBS', 'Raman', 'Reflectance', 'Transmission', 'X-Ray Absorption Near-Edge Structure', 'X-Ray Diffraction', 'X-Ray Fluorescence'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -97,9 +118,9 @@
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="speclib:Specimen_Classification/speclib:material_origin">
-      <sch:assert test=". = ('Natural', 'Synthetic')">
+      <sch:assert test=". = ('Natural', 'Natural-Doped', 'Synthetic')">
         <title>speclib:Specimen_Classification/speclib:material_origin/speclib:material_origin</title>
-        The attribute speclib:Specimen_Classification/speclib:material_origin must be equal to one of the following values 'Natural', 'Synthetic'.</sch:assert>
+        The attribute speclib:Specimen_Classification/speclib:material_origin must be equal to one of the following values 'Natural', 'Natural-Doped', 'Synthetic'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -111,9 +132,9 @@
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="speclib:Specimen_Classification/speclib:material_type">
-      <sch:assert test=". = ('Amorphous', 'Consolidated Mixture', 'Element', 'Ice', 'Mineral', 'Organic', 'Rock', 'Single Particle', 'Unconsolidated Mixture')">
+      <sch:assert test=". = ('Amorphous', 'Brine', 'Consolidated Mixture', 'Element', 'Ice', 'Mineral', 'Organic', 'Rock', 'Single Particle', 'Unconsolidated Mixture')">
         <title>speclib:Specimen_Classification/speclib:material_type/speclib:material_type</title>
-        The attribute speclib:Specimen_Classification/speclib:material_type must be equal to one of the following values 'Amorphous', 'Consolidated Mixture', 'Element', 'Ice', 'Mineral', 'Organic', 'Rock', 'Single Particle', 'Unconsolidated Mixture'.</sch:assert>
+        The attribute speclib:Specimen_Classification/speclib:material_type must be equal to one of the following values 'Amorphous', 'Brine', 'Consolidated Mixture', 'Element', 'Ice', 'Mineral', 'Organic', 'Rock', 'Single Particle', 'Unconsolidated Mixture'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -170,6 +191,22 @@
       <sch:assert test="@unit = ('AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm')">
         <title>speclib:Specimen_Parameters/speclib:specimen_min_size/speclib:specimen_min_size</title>
         The attribute @unit must be equal to one of the following values 'AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="speclib:Specimen_Parameters/speclib:specimen_thin_section_flag">
+      <sch:assert test=". = ('N', 'Y')">
+        <title>speclib:Specimen_Parameters/speclib:specimen_thin_section_flag/speclib:specimen_thin_section_flag</title>
+        The attribute speclib:Specimen_Parameters/speclib:specimen_thin_section_flag must be equal to one of the following values 'N', 'Y'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="speclib:Ancillary_Product/pds:Internal_Reference">
+      <sch:assert test="pds:reference_type = ('data_to_ancillary_data')">
+        <title>speclib_ancillary_product_rule/Rule</title>
+        speclib_ancillary_product_rule_0: In the
+                Ancillary_Product/Internal_Reference class, the value of the reference_type
+                attribute must be equal to "data_to_ancillary_data".</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -239,13 +276,12 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:rule context="pds:Product_Observational/pds:Observation_Area/pds:Discipline_Area/speclib:Spectral_Library_Product/speclib:Measurement_Parameters/speclib:Measurement_Instrument">
-      <sch:assert test="(pds:Internal_Reference/pds:reference_type =
-                'is_instrument')">
+    <sch:rule context="speclib:Measurement_Instrument/pds:Internal_Reference">
+      <sch:assert test="pds:reference_type = ('is_instrument')">
         <title>speclib_measurement_instrument_rule/Rule</title>
         speclib_measurement_instrument_rule_0: In the
                 Measurement_Instrument/Internal_Reference class, the value of the reference_type
-                attribute must be "is_instrument".</sch:assert>
+                attribute must be equal to "is_instrument".</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
