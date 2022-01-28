@@ -33,7 +33,8 @@ SPECLIB Discipline Dictionary Revisions:
 12/16/2021 version 1300
 - GEO/SHS Revised to use PDS IM 1.17.0.0. No other changes.
 
-
+01/28/2022 version 1300
+- GEO/SHS Revised readme.md files for GitHub. No changes to dictionary.
 -----
 This directory should contain one IngestLDD for the LDD being built. The auto-generation script does not currently support multiple versions of an LDD being maintained.
 
