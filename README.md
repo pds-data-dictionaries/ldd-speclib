@@ -2,13 +2,9 @@
 
 The Spectral Library Data Dictionary defines the metadata terms that describe laboratory spectral measurements, including classification of the samples measured.
 
-After cloning the files, do the following:
-
-
 # Documentation
 
-User Guide: TBD
-Other Documentation: TBD
+User Guide: [Spectral Library Dictionary Guide](https://github.com/pds-data-dictionaries/ldd-speclib/Spectral_Library_Dictionary_Guide.pdf)
 
 
 # Contribute
