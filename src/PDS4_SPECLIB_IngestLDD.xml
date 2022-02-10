@@ -20,6 +20,7 @@
           - laser_integrations_saturated
 
     12/16/21 SHS: Revised to use PDS IM 1.17.0.0. No other changes.
+    2/10/22 SHS: changed for demo only
 -->
 
 <Ingest_LDD xmlns="http://pds.nasa.gov/pds4/pds/v1"
