@@ -1,12 +1,12 @@
 
->>  INFO LDDTOOL Version: 13.1.0
->>  INFO IM Version Id: 1.17.0.0
+>>  INFO LDDTOOL Version: 14.0.1
+>>  INFO IM Version Id: 1.18.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.23
->>  INFO Date: Fri Jan 28 18:02:27 UTC 2022
->>  INFO PARENT_DIR: /tmp/lddtool-13.1.0
->>  INFO SCRIPT_DIR: /tmp/lddtool-13.1.0/bin
->>  INFO LIB_DIR: /tmp/lddtool-13.1.0/lib
+>>  INFO IM Label Version Id: 1.24
+>>  INFO Date: Thu Jun 02 19:16:34 UTC 2022
+>>  INFO PARENT_DIR: /tmp/lddtool-14.0.1
+>>  INFO SCRIPT_DIR: /tmp/lddtool-14.0.1/bin
+>>  INFO LIB_DIR: /tmp/lddtool-14.0.1/lib
 
 >>> INFO Init:  - Config.Properties Namespace Id Found:speclib
 >>> INFO Init:  - Config.Properties Namespace Id Using:speclib
@@ -136,17 +136,15 @@
 >>> INFO Attribute: <synthetic_type> - The default maximum characters provided by the attribute's data type is being overridden with 255
 >>> INFO Attribute: <volatile_type> - The default minimum characters provided by the attribute's data type is being overridden with 1
 >>> INFO Attribute: <volatile_type> - The default maximum characters provided by the attribute's data type is being overridden with 255
->>> WARNING Header:  - New steward has been specified:geo
->>> WARNING Header:  - New namespace id has been specified:speclib
 
  -- LDDTool Execution Summary --
-     2 warning(s)
+     0 warning(s)
      0 error(s)
      0 fatal error(s)
 
 Input:
 
-     - IM Version: 1H00
+     - IM Version: 1I00
      - PDS4 Flag: true
      - LDD Flag: true
      - Export JSON Flag: true
@@ -155,9 +153,9 @@ Input:
 
 Output:
 
-     - ./PDS4_SPECLIB_1H00_1300.xsd
-     - ./PDS4_SPECLIB_1H00_1300.sch
-     - ./PDS4_SPECLIB_1H00_1300.xml
-     - ./PDS4_SPECLIB_1H00_1300.JSON
+     - ./PDS4_SPECLIB_1I00_1300.xsd
+     - ./PDS4_SPECLIB_1I00_1300.sch
+     - ./PDS4_SPECLIB_1I00_1300.xml
+     - ./PDS4_SPECLIB_1I00_1300.JSON
 
 >>  INFO Exit(0)
