@@ -2,12 +2,12 @@ PDS4 Local Data Dictionary Processing Report
 
 Configuration:
    LDDTool Version        10.0.0
-   LDD Version Id:        1.3.0.0
+   LDD Version Id:        1.4.0.0
    LDD Label Version Id:  1.23
    LDD Discipline (T/F):  true
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Thu Jun 02 19:16:27 UTC 2022
+   Time                   Wed Jul 20 21:29:01 UTC 2022
    Common Schema          [PDS4_PDS_1H00.xsd]
    Common Schematron      [PDS4_PDS_1H00.sch]
    IM Version Id:         1.17.0.0
@@ -30,8 +30,8 @@ Parameters:
 
 Summary:
    Classes                6
-   Attributes             77
-   Associations           84
+   Attributes             76
+   Associations           83
    Error messages         0
    Warning messages       0
    Information messages   0
@@ -40,7 +40,7 @@ Detailed validation messages
 
 Parsed Input - Header:
    LDD Name               Spectral Library
-   LDD Version            1.3.0.0
+   LDD Version            1.4.0.0
    Full Name              Susan Slavney
    Steward                geo
    Namespace Id           speclib
@@ -48,9 +48,9 @@ Parsed Input - Header:
         The SPECLIB dictionary contains classes and attributes specific to
         spectral reflectance measurements of laboratory specimens.
         
-        SPECLIB version 1.3.0.0 last updated 2021-12-16
+        SPECLIB version 1.4.0.0 last updated 2022-07-15
         PDS Build 1.17.0.0
-        LDDTool version 13.1.0
+        LDDTool version 14.0.13
         Built with lddtool -plJ PDS4_SPECLIB_IngestLDD.xml
     
    Last Modification Time 2021-12-16T21:27Z
@@ -103,7 +103,7 @@ Parsed Input - Attributes:
    name                   incidence_angle
    version                1.17
    value data type        ASCII_Real
-   description            The incidence_angle element provides the angle between the local vertical at the intercept point and a vector from the intercept point to the detector.
+   description            The incidence_angle element provides the angle between the local vertical at the intercept point and a vector from the intercept point to the source.
    nillable               true
    minimum value          -90
    maximum value          90
@@ -163,10 +163,10 @@ Parsed Input - Attributes:
    value data type        ASCII_NonNegative_Integer
    description            The laser_pulses_per_integration element identifies the number of laser pulses per integration. This value is 1 for single shot spectra.
 
-   name                   laser_repetition_rate
+   name                   laser_pulse_rate
    version                1.17
    value data type        ASCII_NonNegative_Integer
-   description            The laser_repetition_rate element indicates the frequency of laser pulses.
+   description            The laser_pulse_rate element indicates the frequency of laser pulses. A laser_pulse_rate of 10 Hz means that the laser fires ten times per second.
    unit of measure type   Units_of_Frequency
 
    name                   laser_wavelength
@@ -200,7 +200,7 @@ Parsed Input - Attributes:
    name                   material_subtype
    version                1.17
    value data type        UTF8_Short_String_Collapsed
-   description            The material_subtype element identifies the material subtype of the specimen.
+   description            The material_subtype element provides an optional descriptor for additional information about the physical state of the specimen, e.g. particulate or nonparticulate.
    minimum characters     1
    maximum characters     255
 
@@ -289,7 +289,7 @@ Parsed Input - Attributes:
    name                   measurement_requestor
    version                1.17
    value data type        UTF8_Short_String_Collapsed
-   description            The measurement_requestor element identifies the individual or laboratory who requested the measurement. It may occur more than once.
+   description            The measurement_requestor element identifies the individual or laboratory who requested the measurement. The attribute may be present with a null value. A maximum of two names are permitted.
    nillable               true
    minimum characters     1
    maximum characters     255
@@ -303,7 +303,7 @@ Parsed Input - Attributes:
    name                   measurement_segments
    version                1.17
    value data type        ASCII_NonNegative_Integer
-   description            The measurement_segments element gives the number of measurement segments that were combined to create the spectrum. If the spectrum is not merged from multiple segments, then the value of measurement_segments is 1.
+   description            The measurement_segments are the number of individual spectra that were combined to create the final merged spectrum. If the spectrum is not merged from multiple spectra, then the value of measurement_segments is 1.
 
    name                   measurement_source_description
    version                1.17
@@ -320,8 +320,8 @@ Parsed Input - Attributes:
 
    name                   microscope_objective
    version                1.17
-   value data type        ASCII_Real
-   description            Objective of microscope.
+   value data type        ASCII_NonNegative_Integer
+   description            The microscope_objective is the magnification power of the objective lens by power (e.g. 4x, 10x).
    minimum value          0
 
    name                   mineral_subtype
@@ -464,7 +464,7 @@ Parsed Input - Attributes:
    name                   specimen_provider_name
    version                1.17
    value data type        UTF8_Short_String_Collapsed
-   description            The specimen_provider_name element gives the name of the person who provided the specimen.
+   description            The specimen_provider_name element gives the name of the person who provided the specimen for spectral measurement.
    minimum characters     1
    maximum characters     255
 
@@ -483,15 +483,9 @@ Parsed Input - Attributes:
    name                   specimen_type
    version                1.17
    value data type        UTF8_Short_String_Collapsed
-   description            The specimen_type element gives one or more terms that classify the origin of the specimen. 
+   description            The specimen_type element gives one or two terms that classify the origin of the specimen. 
    minimum characters     1
    maximum characters     255
-
-   name                   spectral_grating
-   version                1.17
-   value data type        ASCII_Real
-   description            !!! DEFINITION NEEDED !!!
-   minimum value          0
 
    name                   spectral_range_max
    version                1.17
@@ -522,13 +516,13 @@ Parsed Input - Attributes:
    name                   spectral_resolution_width_max
    version                1.17
    value data type        ASCII_Real
-   description            The spectral_resolution_width_max element identifies the maximum width of a spectral band in a given spectrum. If all bands are the same width, spectral_resolution_width_min and spectral_resolution_width_max will have the same value.
+   description            The spectral_resolution_width_max element identifies the full width at half maximum (FWHM) of a spectral band in a given spectrum. If all bands are the same width, spectral_resolution_width_min and spectral_resolution_width_max will have the same value.
    nillable               true
 
    name                   spectral_resolution_width_min
    version                1.17
    value data type        ASCII_Real
-   description            The spectral_resolution_width_min element identifies the minimum width of a spectral band in a given spectrum. If all bands are the same width, spectral_resolution_width_min and spectral_resolution_width_max will have the same value.
+   description            The spectral_resolution_width_min element identifies the full width at half minimum (FWHM) of a spectral band in a given spectrum. If all bands are the same width, spectral_resolution_width_min and spectral_resolution_width_max will have the same value.
    nillable               true
 
    name                   spectral_resolution_width_unit_name
@@ -576,7 +570,7 @@ Parsed Input - Attributes:
    name                   volatile_type
    version                1.17
    value data type        UTF8_Short_String_Collapsed
-   description            The volatile_type element indicates whether the material was volatile-poor (less than 2.0% LOI) or volatile-rich (greater than 2.0% LOI). 
+   description            The volatile_type element indicates whether the material was volatile-poor (less than 2.0% loss on ignition) or volatile-rich (greater than 2.0% loss on ignition). 
    nillable               true
    minimum characters     1
    maximum characters     255
@@ -756,7 +750,7 @@ Parsed Input - Classes:
 
       local identifier      measurement_requestor
       minimum occurrences   0
-      maximum occurrences   *
+      maximum occurrences   2
       reference type        attribute_of
 
       local identifier      measurement_notes
@@ -765,11 +759,6 @@ Parsed Input - Classes:
       reference type        attribute_of
 
       local identifier      accumulation_time
-      minimum occurrences   0
-      maximum occurrences   1
-      reference type        attribute_of
-
-      local identifier      spectral_grating
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
@@ -809,7 +798,7 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      laser_repetition_rate
+      local identifier      laser_pulse_rate
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
@@ -849,7 +838,7 @@ Parsed Input - Classes:
 
       local identifier      specimen_type
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   2
       reference type        attribute_of
 
       local identifier      material_common_name

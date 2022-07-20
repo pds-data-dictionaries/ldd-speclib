@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:speclib  Version:1.3.0.0 - Thu Jun 02 19:16:27 UTC 2022 -->
+  <!-- PDS4 XML/Schema for Name Space Id:speclib  Version:1.4.0.0 - Wed Jul 20 21:29:01 UTC 2022 -->
   <!-- Generated from the PDS4 Information Model Version 1.17.0.0 - System Build 12.0 -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
   <!-- 1.17.0.0 - pds: - Common Dictionary                                       -->
-  <!-- 1.3.0.0 - speclib: - Spectral Library                                     -->
+  <!-- 1.4.0.0 - speclib: - Spectral Library                                     -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     targetNamespace="http://pds.nasa.gov/pds4/speclib/v1"
@@ -13,7 +13,7 @@
     xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
     elementFormDefault="qualified"
     attributeFormDefault="unqualified"
-    version="1.3.0.0">
+    version="1.4.0.0">
  
     <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1H00.xsd"/>
  
@@ -23,9 +23,9 @@
         The SPECLIB dictionary contains classes and attributes specific to
         spectral reflectance measurements of laboratory specimens.
         
-        SPECLIB version 1.3.0.0 last updated 2021-12-16
+        SPECLIB version 1.4.0.0 last updated 2022-07-15
         PDS Build 1.17.0.0
-        LDDTool version 13.1.0
+        LDDTool version 14.0.13
         Built with lddtool -plJ PDS4_SPECLIB_IngestLDD.xml
     
     </xs:documentation>
@@ -97,10 +97,9 @@
       <xs:element name="measurement_date_time" nillable="true" type="speclib:measurement_date_time" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="data_producer_name" type="speclib:data_producer_name" minOccurs="1" maxOccurs="1"> </xs:element>
       <xs:element name="data_provider_name" type="speclib:data_provider_name" minOccurs="1" maxOccurs="1"> </xs:element>
-      <xs:element name="measurement_requestor" nillable="true" type="speclib:measurement_requestor" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="measurement_requestor" nillable="true" type="speclib:measurement_requestor" minOccurs="0" maxOccurs="2"> </xs:element>
       <xs:element name="measurement_notes" type="speclib:measurement_notes" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="accumulation_time" type="speclib:accumulation_time" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="spectral_grating" type="speclib:spectral_grating" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="microscope_objective" type="speclib:microscope_objective" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="laser_pulses_per_integration" type="speclib:laser_pulses_per_integration" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="laser_attenuation" type="speclib:laser_attenuation" minOccurs="0" maxOccurs="1"> </xs:element>
@@ -108,7 +107,7 @@
       <xs:element name="laser_power_for_calibration_min" type="speclib:laser_power_for_calibration_min" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="laser_power_for_calibration_max" type="speclib:laser_power_for_calibration_max" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="laser_wavelength" type="speclib:laser_wavelength" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="laser_repetition_rate" type="speclib:laser_repetition_rate" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="laser_pulse_rate" type="speclib:laser_pulse_rate" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="laser_averaged_integrations" type="speclib:laser_averaged_integrations" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="dark_subtraction_flag" type="speclib:dark_subtraction_flag" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="laser_pulses_discarded" type="speclib:laser_pulses_discarded" minOccurs="0" maxOccurs="1"> </xs:element>
@@ -129,7 +128,7 @@
         classified.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="specimen_type" type="speclib:specimen_type" minOccurs="1" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="specimen_type" type="speclib:specimen_type" minOccurs="1" maxOccurs="2"> </xs:element>
       <xs:element name="material_common_name" type="speclib:material_common_name" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="material_origin" type="speclib:material_origin" minOccurs="1" maxOccurs="1"> </xs:element>
       <xs:element name="synthetic_type" type="speclib:synthetic_type" minOccurs="0" maxOccurs="1"> </xs:element>
@@ -307,7 +306,7 @@
     <xs:annotation>
       <xs:documentation>The incidence_angle element provides the angle
         between the local vertical at the intercept point and a vector
-        from the intercept point to the detector.</xs:documentation>
+        from the intercept point to the source.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="speclib:incidence_angle_WO_Units">
@@ -408,6 +407,27 @@
 	   </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="laser_pulse_rate_WO_Units">
+    <xs:restriction base="pds:ASCII_NonNegative_Integer">
+    	<xs:pattern value='[0-9]+'/>
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="18446744073709551615"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="laser_pulse_rate">
+    <xs:annotation>
+      <xs:documentation>The laser_pulse_rate element indicates the
+        frequency of laser pulses. A laser_pulse_rate of 10 Hz means
+        that the laser fires ten times per second.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="speclib:laser_pulse_rate_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Frequency" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
   <xs:simpleType name="laser_pulses_discarded">
     <xs:annotation>
       <xs:documentation>The laser_pulses_discarded element indicates the
@@ -432,26 +452,6 @@
      <xs:maxInclusive value="18446744073709551615"/>
 	   </xs:restriction>
   </xs:simpleType>
-
-  <xs:simpleType name="laser_repetition_rate_WO_Units">
-    <xs:restriction base="pds:ASCII_NonNegative_Integer">
-    	<xs:pattern value='[0-9]+'/>
-     <xs:minInclusive value="0"/>
-     <xs:maxInclusive value="18446744073709551615"/>
-	   </xs:restriction>
-  </xs:simpleType>
-
-  <xs:complexType name="laser_repetition_rate">
-    <xs:annotation>
-      <xs:documentation>The laser_repetition_rate element indicates the
-        frequency of laser pulses.</xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="speclib:laser_repetition_rate_WO_Units">
-        <xs:attribute name="unit" type="pds:Units_of_Frequency" use="required" />
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
 
   <xs:simpleType name="laser_wavelength_WO_Units">
     <xs:restriction base="pds:ASCII_Real">
@@ -511,8 +511,10 @@
 
   <xs:simpleType name="material_subtype">
     <xs:annotation>
-      <xs:documentation>The material_subtype element identifies the
-        material subtype of the specimen.</xs:documentation>
+      <xs:documentation>The material_subtype element provides an
+        optional descriptor for additional information about the
+        physical state of the specimen, e.g. particulate or
+        nonparticulate.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:UTF8_Short_String_Collapsed">
      <xs:minLength value="1"/>
@@ -689,8 +691,9 @@
   <xs:complexType name="measurement_requestor">
     <xs:annotation>
       <xs:documentation>The measurement_requestor element identifies the
-        individual or laboratory who requested the measurement. It may
-        occur more than once.</xs:documentation>
+        individual or laboratory who requested the measurement. The
+        attribute may be present with a null value. A maximum of two
+        names are permitted.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="pds:UTF8_Short_String_Collapsed">
@@ -713,9 +716,9 @@
 
   <xs:simpleType name="measurement_segments">
     <xs:annotation>
-      <xs:documentation>The measurement_segments element gives the
-        number of measurement segments that were combined to create the
-        spectrum. If the spectrum is not merged from multiple segments,
+      <xs:documentation>The measurement_segments are the number of
+        individual spectra that were combined to create the final merged
+        spectrum. If the spectrum is not merged from multiple spectra,
         then the value of measurement_segments is 1.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_NonNegative_Integer">
@@ -751,11 +754,14 @@
 
   <xs:simpleType name="microscope_objective">
     <xs:annotation>
-<xs:documentation>Objective of microscope.</xs:documentation>
+      <xs:documentation>The microscope_objective is the magnification
+        power of the objective lens by power (e.g. 4x,
+        10x).</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="pds:ASCII_Real">
+    <xs:restriction base="pds:ASCII_NonNegative_Integer">
+    	<xs:pattern value='[0-9]+'/>
      <xs:minInclusive value="0"/>
-     <xs:maxInclusive value="1.7976931348623157e308"/>
+     <xs:maxInclusive value="18446744073709551615"/>
 	   </xs:restriction>
   </xs:simpleType>
 
@@ -1016,7 +1022,8 @@
   <xs:simpleType name="specimen_provider_name">
     <xs:annotation>
       <xs:documentation>The specimen_provider_name element gives the
-        name of the person who provided the specimen.</xs:documentation>
+        name of the person who provided the specimen for spectral
+        measurement.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:UTF8_Short_String_Collapsed">
      <xs:minLength value="1"/>
@@ -1048,23 +1055,12 @@
 
   <xs:simpleType name="specimen_type">
     <xs:annotation>
-      <xs:documentation>The specimen_type element gives one or more
-        terms that classify the origin of the specimen.
-        </xs:documentation>
+      <xs:documentation>The specimen_type element gives one or two terms
+        that classify the origin of the specimen. </xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:UTF8_Short_String_Collapsed">
      <xs:minLength value="1"/>
      <xs:maxLength value="255"/>
-	   </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="spectral_grating">
-    <xs:annotation>
-<xs:documentation>!!! DEFINITION NEEDED !!!</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="pds:ASCII_Real">
-     <xs:minInclusive value="0"/>
-     <xs:maxInclusive value="1.7976931348623157e308"/>
 	   </xs:restriction>
   </xs:simpleType>
 
@@ -1123,8 +1119,8 @@
   <xs:complexType name="spectral_resolution_width_max">
     <xs:annotation>
       <xs:documentation>The spectral_resolution_width_max element
-        identifies the maximum width of a spectral band in a given
-        spectrum. If all bands are the same width,
+        identifies the full width at half maximum (FWHM) of a spectral
+        band in a given spectrum. If all bands are the same width,
         spectral_resolution_width_min and spectral_resolution_width_max
         will have the same value.</xs:documentation>
     </xs:annotation>
@@ -1138,8 +1134,8 @@
   <xs:complexType name="spectral_resolution_width_min">
     <xs:annotation>
       <xs:documentation>The spectral_resolution_width_min element
-        identifies the minimum width of a spectral band in a given
-        spectrum. If all bands are the same width,
+        identifies the full width at half minimum (FWHM) of a spectral
+        band in a given spectrum. If all bands are the same width,
         spectral_resolution_width_min and spectral_resolution_width_max
         will have the same value.</xs:documentation>
     </xs:annotation>
@@ -1237,8 +1233,9 @@
   <xs:complexType name="volatile_type">
     <xs:annotation>
       <xs:documentation>The volatile_type element indicates whether the
-        material was volatile-poor (less than 2.0% LOI) or volatile-rich
-        (greater than 2.0% LOI). </xs:documentation>
+        material was volatile-poor (less than 2.0% loss on ignition) or
+        volatile-rich (greater than 2.0% loss on ignition).
+        </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="pds:UTF8_Short_String_Collapsed">
