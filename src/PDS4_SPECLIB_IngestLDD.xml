@@ -20,6 +20,25 @@
           - laser_integrations_saturated
 
     12/16/21 SHS: Revised to use PDS IM 1.17.0.0. No other changes.
+    
+    07/14/22 DMS: Revised for clarity of definitions
+       Changes:
+       - Changed laser_repetition_rate to laser_pulse_rate and updated the definition
+       - measurement_requestor is limited to max of 2 instances from a previous unlimited.
+       - specimen_min_size & specimen_max_size were updated to remove nil value choice, 
+            but still optional elements
+       - specimen_type has been limited to a maximum of 2 instances and definition has
+         been updated for clarity.
+       - Updated Synthetic definition for clarity
+       - Cleaned up comments
+       - Removed unused spectral_grating 
+       - Updated definition of
+        - spectral_resolution_width_max
+        - spectral_resolution_width_min
+        - specimen_provider_name
+        - incidence_angle
+        - microscope_objective        
+       
 -->
 
 <Ingest_LDD xmlns="http://pds.nasa.gov/pds4/pds/v1"
@@ -28,7 +47,7 @@
     xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 
                         http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1H00.xsd">
     <name>Spectral Library</name>
-    <ldd_version_id>1.3.0.0</ldd_version_id>
+    <ldd_version_id>1.4.0.0</ldd_version_id>
     <dictionary_type>Discipline</dictionary_type>
     <full_name>Susan Slavney</full_name>
     <steward_id>geo</steward_id>
@@ -37,9 +56,9 @@
         The SPECLIB dictionary contains classes and attributes specific to
         spectral reflectance measurements of laboratory specimens.
         
-        SPECLIB version 1.3.0.0 last updated 2021-12-16
+        SPECLIB version 1.4.0.0 last updated 2022-07-15
         PDS Build 1.17.0.0
-        LDDTool version 13.1.0
+        LDDTool version 14.0.13
         Built with lddtool -plJ PDS4_SPECLIB_IngestLDD.xml
     </comment>
     <last_modification_date_time>2021-12-16T21:27Z</last_modification_date_time>
@@ -50,8 +69,6 @@
               Measurement_Parameters class
                  Measurement_Instrument class
               Specimen_Classification class
-                 Synthetic_Specimen subclass
-                 Natural Specimen subclass
               Specimen_Parameters class
               Ancillary_Product class
               
@@ -71,9 +88,9 @@
           laser_power_for_calibration_max
           laser_power_for_calibration_min
           laser_power_sample
+          laser_pulse_rate
           laser_pulses_discarded
           laser_pulses_per_integration
-          laser_repetition_rate
           laser_wavelength
           material_common_name
           material_origin
@@ -141,7 +158,8 @@
         <local_identifier>accumulation_time</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Scott VanBommel</submitter_name>
-        <definition>The duration for which a measurement was acquired. If more than one measurement is reported, this value corresponds to the total measurement time across all measurements.</definition>
+        <definition>The duration for which a measurement was acquired. If more than one measurement 
+            is reported, this value corresponds to the total measurement time across all measurements.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -315,7 +333,7 @@
         <nillable_flag>true</nillable_flag>
         <submitter_name>Allison Zastrow</submitter_name>
         <definition>The incidence_angle element provides the angle between the local vertical at the
-            intercept point and a vector from the intercept point to the detector.</definition>
+            intercept point and a vector from the intercept point to the source.</definition>
         <comment>
             N/A for some measurement_geometry_types. Will make it optional in the class.
             Ralph M. says negative values are permitted; the sign indicates direction.
@@ -442,12 +460,14 @@
             <value_data_type>ASCII_NonNegative_Integer</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    <DD_Attribute> <name>laser_repetition_rate</name> 																						
+    <DD_Attribute> <name>laser_pulse_rate</name> 																						
         <version_id>1.0</version_id>
-        <local_identifier>laser_repetition_rate</local_identifier>
+        <local_identifier>laser_pulse_rate</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jennifer Ward</submitter_name>
-        <definition>The laser_repetition_rate element indicates the frequency of laser pulses.</definition>
+        <definition>The laser_pulse_rate element indicates the frequency of 
+            laser pulses. A laser_pulse_rate of 10 Hz means that the laser 
+            fires ten times per second.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_NonNegative_Integer</value_data_type>
@@ -475,10 +495,6 @@
         <definition>The material_common_name element gives the specific name of the specimen material,
             as specifically as it is known.  For example, if a specimen is pure olivine, put "Olivine".  If a specimen
             is a mixture of kaolinite and opal, put "Kaolinite/Opal".  Indicate if "Unidentified".</definition>
-        <comment>I would like these to be searchable items/keywords.  If something like "Kaolinite/Opal" is included,
-            could it be found by only searching for "opal" or would it have to be specifically searched for as 
-            "Kaolinite/Opal"?  (AZ)
-            Changed this from material_identification and made it optional. (EG)</comment>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>UTF8_Short_String_Collapsed</value_data_type>
@@ -492,13 +508,6 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Allison Zastrow</submitter_name>
         <definition>The material_origin element identifies whether the specimen is natural, synthetic, or natural/doped.</definition>
-        <comment>Is it possible to organize these specimen classification attributes so that the form changes
-            depending on which option they choose?  Or by doing away with the whole hierarchical system, does that 
-            no longer matter?  We could also put a N/A option on each of the subtypes so that if something's not a
-            mineral (or whatever it may not be), they just have to fill in N/A.  I'm still a bit unsure about the 
-            non-hierarchical idea as it relates to the classification.
-            Also, once something is marked as "Unclassified", it's not going to have any further classification. 
-            Will they just have to fill in N/A for everything else after that?</comment>
         <DD_Value_Domain>
             <enumeration_flag>true</enumeration_flag>
             <value_data_type>UTF8_Short_String_Collapsed</value_data_type>
@@ -510,9 +519,9 @@
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Synthetic</value>
-                <value_meaning>The Synthetic value indicates that the specimen was made in a laboratory. 
-                    A synthetic sample could be either a physical mixture of natural materials or a
-                    laboratory synthesized material.</value_meaning>
+                <value_meaning>The Synthetic value indicates that the specimen or some portion of a specimen was 
+                    manufactured, laboratory-generated, or naturally occuring sample that has been significantly 
+                    modified (e.g. heating irradiation). Grinding and stirring alone do not count as significantly modified.</value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Natural-Doped</value>
@@ -551,7 +560,8 @@
         <local_identifier>material_subtype</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Ed Guinness</submitter_name>
-        <definition>The material_subtype element identifies the material subtype of the specimen.</definition>
+        <definition>The material_subtype element provides an optional descriptor for additional information 
+            about the physical state of the specimen, e.g. particulate or nonparticulate.</definition>
         <comment>Material_subtype does not have enumerated values because there are too many to list.
             This is a place to put "Particulate" or "Nonparticulate" as RELAB suggests.</comment>
         <DD_Value_Domain>
@@ -814,7 +824,10 @@
         <nillable_flag>true</nillable_flag>
         <submitter_name>Allison Zastrow</submitter_name>
         <definition>The measurement_requestor element identifies the individual or laboratory who
-            requested the measurement. It may occur more than once.</definition>
+            requested the measurement. The attribute may be present with a null value. A maximum 
+            of two names are permitted.</definition>
+        <comment>A maximum of two names are permitted to allow for a PI and student, 
+            in the case of some RELAB measurements.</comment>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>UTF8_Short_String_Collapsed</value_data_type>
@@ -838,9 +851,9 @@
         <local_identifier>measurement_segments</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Susan Slavney</submitter_name>
-        <definition>The measurement_segments element gives the number of measurement segments 
-            that were combined to create the spectrum. If the spectrum is not
-            merged from multiple segments, then the value of measurement_segments is 1.</definition>
+        <definition>The measurement_segments are the number of individual spectra that were combined 
+            to create the final merged spectrum. If the spectrum is not merged from multiple 
+            spectra, then the value of measurement_segments is 1.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_NonNegative_Integer</value_data_type>
@@ -925,10 +938,11 @@
         <local_identifier>microscope_objective</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Scott VanBommel</submitter_name>
-        <definition>Objective of microscope.</definition>
+        <definition>The microscope_objective is the magnification power of 
+            the objective lens by power (e.g. 4x, 10x).</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
+            <value_data_type>ASCII_NonNegative_Integer</value_data_type>
 			<minimum_value>0</minimum_value>
         </DD_Value_Domain>
     </DD_Attribute>
@@ -1054,7 +1068,6 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Allison Zastrow</submitter_name>
         <definition>The organic_type element identifies the organic type to which the specimen belongs.</definition>
-        <comment>Need Ray's input here too.</comment>
         <DD_Value_Domain>
             <enumeration_flag>true</enumeration_flag>
             <value_data_type>UTF8_Short_String_Collapsed</value_data_type>
@@ -1317,7 +1330,7 @@
             <maximum_characters>255</maximum_characters>
         </DD_Value_Domain>
     </DD_Attribute>
-    <DD_Attribute> <name>specimen_ph</name> 																						
+    <DD_Attribute> <name>specimen_ph</name>
         <version_id>1.0</version_id>
         <local_identifier>specimen_ph</local_identifier>
         <nillable_flag>false</nillable_flag>				
@@ -1330,13 +1343,14 @@
             <maximum_value>14</maximum_value>
         </DD_Value_Domain>
     </DD_Attribute>
-    <DD_Attribute> <name>specimen_provider_name</name> 																				
+    <DD_Attribute> <name>specimen_provider_name</name>
         <version_id>1.0</version_id>
         <local_identifier>specimen_provider_name</local_identifier>
         <nillable_flag>false</nillable_flag>				
         <submitter_name>Scott VanBommel</submitter_name>
-        <definition>The specimen_provider_name element gives the name of the person who provided the specimen.</definition>
-        <comment>How is this different from specimen_owner_name?</comment>
+        <definition>The specimen_provider_name element gives the name of the person who 
+            provided the specimen for spectral measurement.</definition>
+        <comment>This could be different from the specimen_owner_name (individual or laboratory).</comment>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>UTF8_Short_String_Collapsed</value_data_type>
@@ -1381,8 +1395,10 @@
         <local_identifier>specimen_type</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Susan Slavney</submitter_name>
-        <definition>The specimen_type element gives one or more terms that classify the origin of the specimen. </definition>
-        <comment>Permissible values include relevant PDS4 Target_Identification types. More specific types to be added as needed.</comment>
+        <definition>The specimen_type element gives one or two terms that classify the origin of the specimen. </definition>
+        <comment>Permissible values include relevant PDS4 Target_Identification types. More specific types to be added as needed.
+        The most common combination of two specimen_types would include synthetic sample for naturally occuring specimen
+        that have been significantly modified.</comment>
         <DD_Value_Domain>
             <enumeration_flag>true</enumeration_flag>
             <value_data_type>UTF8_Short_String_Collapsed</value_data_type>
@@ -1415,22 +1431,25 @@
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Synthetic Sample</value>
-                <value_meaning>The Synthetic Sample value means the specimen is a laboratory-generated sample.</value_meaning>
+                <value_meaning>The Synthetic Sample value means the specimen is manufactured, laboratory-generated, or a 
+                    naturally occurring sample that has been significantly modified (e.g. heating, irradiation). Grinding and stirring
+                    alone do not count as significantly modified.</value_meaning>
             </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
-    <DD_Attribute> <name>spectral_grating</name> 																				
+    <!-- removed 7/14/22 until needed
+     <DD_Attribute> <name>spectral_grating</name> 																				
         <version_id>1.0</version_id>
         <local_identifier>spectral_grating</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Scott VanBommel</submitter_name>
-        <definition>!!! DEFINITION NEEDED !!!</definition>
+        <definition></definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
 			<minimum_value>0</minimum_value>
         </DD_Value_Domain>
-    </DD_Attribute>
+    </DD_Attribute> -->
     <DD_Attribute> <name>spectral_range_max</name>
         <version_id>1.0</version_id>
         <local_identifier>spectral_range_max</local_identifier>
@@ -1466,12 +1485,6 @@
         <submitter_name>Allison Zastrow</submitter_name>
         <definition>The spectral_range_parameter_name element identifies the name of the parameter which
             determines the sampling interval of the measurement.</definition>
-        <comment>If it would be possible for there to be another option that I'm not currently aware of,
-            is it possible to have an "other" option that then can be filled in and added to the search list
-            of the database site?  Also, these particular values are fairly self-explanatory (i.e. if you're looking
-            at spectra and don't know what wavelength is.....), is the value_meaning tag a necessary component 
-            of the definition, and if so, what would you suggest putting in its place? EAG - These 4 are a good start.
-            If others are needed, we can revise the dictionary to add it.</comment>
         <DD_Value_Domain>
             <enumeration_flag>true</enumeration_flag>
             <value_data_type>UTF8_Short_String_Collapsed</value_data_type>
@@ -1491,15 +1504,15 @@
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Time</value>
-                <value_meaning>The Time value means the spectra is a function of time.</value_meaning>
+                <value_meaning>The Time value means the spectrum is a function of time.</value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Angle</value>
-                <value_meaning>The Angle value means the spectra is a function of angle.</value_meaning>
+                <value_meaning>The Angle value means the spectrum is a function of angle.</value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Energy</value>
-                <value_meaning>The Energy value means the spectra is a function of energy.</value_meaning>
+                <value_meaning>The Energy value means the spectrum is a function of energy.</value_meaning>
             </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
@@ -1522,10 +1535,10 @@
         <local_identifier>spectral_resolution_width_max</local_identifier>
         <nillable_flag>true</nillable_flag>
         <submitter_name>Susan Slavney</submitter_name>
-        <definition>The spectral_resolution_width_max element identifies the maximum width of 
-            a spectral band in a given spectrum. If all bands are the same width,
-            spectral_resolution_width_min and spectral_resolution_width_max will have
-            the same value.</definition>
+        <definition>The spectral_resolution_width_max element identifies the full
+            width at half maximum (FWHM) of a spectral band in a given spectrum. If all bands 
+            are the same width, spectral_resolution_width_min and spectral_resolution_width_max 
+            will have the same value.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -1536,10 +1549,10 @@
         <local_identifier>spectral_resolution_width_min</local_identifier>
         <nillable_flag>true</nillable_flag>
         <submitter_name>Susan Slavney</submitter_name>
-        <definition>The spectral_resolution_width_min element identifies the minimum width of
-            a spectral band in a given spectrum. If all bands are the same width,
-            spectral_resolution_width_min and spectral_resolution_width_max will have
-            the same value.</definition>
+        <definition>The spectral_resolution_width_min element identifies the full
+            width at half minimum (FWHM) of a spectral band in a given spectrum. If all bands 
+            are the same width, spectral_resolution_width_min and spectral_resolution_width_max 
+            will have the same value.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -1660,8 +1673,8 @@
         <local_identifier>volatile_type</local_identifier>
         <nillable_flag>true</nillable_flag>
         <submitter_name>Ed Guinness</submitter_name>
-        <definition>The volatile_type element indicates whether the material was volatile-poor (less than 2.0% LOI)
-            or volatile-rich (greater than 2.0% LOI).
+        <definition>The volatile_type element indicates whether the material was volatile-poor (less than 2.0% loss on ignition)
+            or volatile-rich (greater than 2.0% loss on ignition).
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>true</enumeration_flag>
@@ -1670,11 +1683,11 @@
             <maximum_characters>255</maximum_characters>
             <DD_Permissible_Value>
                 <value>Poor</value>
-                <value_meaning>The Poor value indicates the specimen had less than 2.0% LOI.</value_meaning>
+                <value_meaning>The Poor value indicates the specimen had less than 2.0% loss on ignition.</value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Rich</value>
-                <value_meaning>The Rich value indicates the specimen had greater than 2.0% LOI.</value_meaning>
+                <value_meaning>The Rich value indicates the specimen had greater than 2.0% loss on ignition.</value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Unknown</value>
@@ -1703,26 +1716,6 @@
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
-<!--        <DD_Associate_External_Class>
-            <namespace_id>pds</namespace_id>
-            <class_name>Internal_Reference</class_name>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-            <DD_Context_Value_List>
-                <attribute_name>reference_type</attribute_name>
-                <attribute_relative_xpath>
-                    pds:Product_Observational/pds:Observation_Area/pds:Discipline_Area/speclib:Spectral_Library_Product/speclib:Measurement_Parameters/speclib:Measurement_Instrument/pds:Internal_Reference/pds:reference_type
-                </attribute_relative_xpath>
-                <DD_Permissible_Value>
-                    <value>measurement_parameters_to_instrument</value>
-                    <value_meaning>
-                        The measurement parameters are relevant to 
-                        the instrument identified by the given LID.
-                    </value_meaning>
-                </DD_Permissible_Value>
-            </DD_Context_Value_List>
-        </DD_Associate_External_Class>
--->
         <!-- LID or LIDVID of instrument that took the measurement -->
         <DD_Association>
             <identifier_reference>pds.Internal_Reference</identifier_reference>
@@ -1769,7 +1762,6 @@
             measurement_requestor (O/N)
             measurement_notes (O)
             accumulation_time (O)
-            spectral_grating (O)
             microscope_objective (O)
             laser_pulses_per_integration (O)
             laser_attenuation (O)
@@ -1777,7 +1769,7 @@
             laser_power_for_calibration_min (O)
             laser_power_for_calibration_max (O)
             laser_wavelength (O)
-            laser_repetition_rate (O)
+            laser_pulse_rate (O)
             laser_averaged_integrations (O)
             dark_subtraction_flag (O)
             laser_pulses_discarded (O)
@@ -1973,7 +1965,7 @@
             <identifier_reference>measurement_requestor</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>*</maximum_occurrences>
+            <maximum_occurrences>2</maximum_occurrences>
         </DD_Association>
         <DD_Association>
             <identifier_reference>measurement_notes</identifier_reference>
@@ -1987,12 +1979,12 @@
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
-        <DD_Association>
+        <!--<DD_Association>
             <identifier_reference>spectral_grating</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
+        </DD_Association> -->
         <DD_Association>
             <identifier_reference>microscope_objective</identifier_reference>
             <reference_type>attribute_of</reference_type>
@@ -2036,7 +2028,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>laser_repetition_rate</identifier_reference>
+            <identifier_reference>laser_pulse_rate</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
@@ -2091,7 +2083,10 @@
             rock_type (O) (Igneous, Sedimentary, Metamorphic)
             rock_subtype (O) (not enumerated; can have more than one)
             volatile_type (O/N) (Rich, Poor, Unknown)
-            synthetic_processing_description (O) (How was the material created? If mixture, from what? Etc.)               
+            synthetic_processing_description (O) (How was the material created? If mixture, from what? Etc.) 
+            specimen_ph (O)
+            specimen_dilution_method (O)
+            specimen_solute_standard (O)
     -->
     <DD_Class> <name>Specimen_Classification</name>
         <version_id>1.0</version_id>
@@ -2103,7 +2098,7 @@
             <identifier_reference>specimen_type</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>*</maximum_occurrences>
+            <maximum_occurrences>2</maximum_occurrences>
         </DD_Association>
         <DD_Association>
             <identifier_reference>material_common_name</identifier_reference>
@@ -2210,10 +2205,10 @@
             specimen_name (O)
             specimen_description (O)
             source_specimen_id (O/N)
-            specimen_min_size (O/N)
-            specimen_max_size (O/N)
+            specimen_min_size (O)
+            specimen_max_size (O)
             specimen_thin_section_flag (O)
-            specimen_collection_location (R)
+            specimen_collection_location (R/N)
             specimen_owner_location (R/N)
             specimen_owner_name (R/N)
             specimen_provider_name (O)
