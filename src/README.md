@@ -35,6 +35,10 @@ SPECLIB Discipline Dictionary Revisions:
 
 01/28/2022 version 1300
 - GEO/SHS Revised readme.md files for GitHub. No changes to dictionary.
+
+7/15/2021 version 1400
+- GEO/DMS Revised dictionary with updated definitions for clarity, comment clean up, removed unused spectral_grating attribute.
+  
 -----
 This directory should contain one IngestLDD for the LDD being built. The auto-generation script does not currently support multiple versions of an LDD being maintained.
 

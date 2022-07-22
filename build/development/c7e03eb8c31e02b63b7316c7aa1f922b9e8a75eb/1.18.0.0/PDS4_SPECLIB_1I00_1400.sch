@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:speclib  Version:1.3.0.0 - Thu Jun 02 19:16:27 UTC 2022 -->
-  <!-- Generated from the PDS4 Information Model Version 1.17.0.0 - System Build 12.0 -->
+  <!-- PDS4 Schematron for Name Space Id:speclib  Version:1.4.0.0 - Wed Jul 20 22:16:05 UTC 2022 -->
+  <!-- Generated from the PDS4 Information Model Version 1.18.0.0 - System Build 12.1 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
 
@@ -19,10 +19,124 @@
 		   <!--        merged together in the rules below.       -->
 		   <!-- ================================================ -->
   <sch:pattern>
+    <sch:rule context="pds:Product_Observational/pds:Observation_Area/pds:Discipline_Area/speclib:Spectral_Library_Product">
+      <sch:assert test="(speclib:measurement_segments =
+                count(speclib:Measurement_Parameters))">
+        <title>pds:Product_Observational/pds:Observation_Area/pds:Discipline_Area/speclib:Spectral_Library_Product/Rule</title>
+        speclib_measurement_segments_rule: The value of the attribute
+                measurement_segments must equal the number of occurrences of the class
+                Measurement_Parameters.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="pds:Product_Observational/pds:Observation_Area/pds:Discipline_Area/speclib:Spectral_Library_Product/speclib:Measurement_Parameters">
+      <sch:assert test="(number(speclib:spectral_range_min) le number(speclib:spectral_range_max))">
+        <title>pds:Product_Observational/pds:Observation_Area/pds:Discipline_Area/speclib:Spectral_Library_Product/speclib:Measurement_Parameters/Rule</title>
+        speclib_measurement_parameters_rule_0: speclib:spectral_range_min must be less than or equal to speclib:spectral_range_max.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="pds:Product_Observational/pds:Observation_Area/pds:Discipline_Area/speclib:Spectral_Library_Product/speclib:Specimen_Classification">
+      <sch:assert test="(speclib:material_state = 'Solid' and 
+                speclib:material_type and
+                (speclib:material_subtype = 'Particulate' or speclib:material_subtype = 'Nonparticulate')) or 
+                (speclib:material_state != 'Solid')
+            ">
+        <title>pds:Product_Observational/pds:Observation_Area/pds:Discipline_Area/speclib:Spectral_Library_Product/speclib:Specimen_Classification/Rule</title>
+        speclib_classification_rule_solid_material: In the Specimen_Classification
+                class, if material_state is Solid, then the attributes material_type and
+                material_subtype must be present, and material_subtype must include either
+                Particulate or Nonparticulate.</sch:assert>
+      <sch:assert test="(speclib:material_state = 'Solid' and speclib:material_type = 'Organic' and speclib:organic_type = 'Organic') or
+                (speclib:material_state = 'Solid' and speclib:material_type != 'Organic') or
+                (speclib:material_state != 'Solid')
+            ">
+        <title>pds:Product_Observational/pds:Observation_Area/pds:Discipline_Area/speclib:Spectral_Library_Product/speclib:Specimen_Classification/Rule</title>
+        speclib:classification_rule_organic_material: In the
+                Specimen_Classification class, if material_type is Organic, then the 
+                attribute organic_type must also be Organic.</sch:assert>
+      <sch:assert test="(speclib:material_state = 'Solid' and speclib:material_type = 'Mineral' and speclib:mineral_type) or
+                       (speclib:material_state = 'Solid' and speclib:material_type != 'Mineral') or
+                       (speclib:material_state != 'Solid')
+            ">
+        <title>pds:Product_Observational/pds:Observation_Area/pds:Discipline_Area/speclib:Spectral_Library_Product/speclib:Specimen_Classification/Rule</title>
+        speclib_classification_rule_mineral: In the Specimen_Classification class,
+                if material_type is Mineral, then the attribute mineral_type must be
+                present.</sch:assert>
+      <sch:assert test="(speclib:material_state = 'Solid' and speclib:material_type = 'Rock' and speclib:rock_type) or
+                       (speclib:material_state = 'Solid' and speclib:material_type != 'Rock') or
+                       (speclib:material_state != 'Solid')
+            ">
+        <title>pds:Product_Observational/pds:Observation_Area/pds:Discipline_Area/speclib:Spectral_Library_Product/speclib:Specimen_Classification/Rule</title>
+        speclib_classification_rule_rock: In the Specimen_Classification class, if
+                material_type is Rock, then the attribute rock_type must be present.</sch:assert>
+      <sch:assert test="(speclib:material_subtype and speclib:material_type) or 
+                       (not (speclib:material_subtype))
+            ">
+        <title>pds:Product_Observational/pds:Observation_Area/pds:Discipline_Area/speclib:Spectral_Library_Product/speclib:Specimen_Classification/Rule</title>
+        speclib_classification_rule_material_subtype: In the
+                Specimen_Classification class, if the attribute material_subtype is present, then
+                the attribute material_type must also be present.</sch:assert>
+      <sch:assert test="(speclib:mineral_subtype and speclib:mineral_type) or 
+                       (not (speclib:mineral_subtype))
+            ">
+        <title>pds:Product_Observational/pds:Observation_Area/pds:Discipline_Area/speclib:Spectral_Library_Product/speclib:Specimen_Classification/Rule</title>
+        speclib_classification_rule_mineral_subtype: In the
+                Specimen_Classification class, if the attribute mineral_subtype is present, then the
+                attribute mineral_type must also be present.</sch:assert>
+      <sch:assert test="(speclib:rock_subtype and speclib:rock_type) or 
+                       (not (speclib:rock_subtype))
+            ">
+        <title>pds:Product_Observational/pds:Observation_Area/pds:Discipline_Area/speclib:Spectral_Library_Product/speclib:Specimen_Classification/Rule</title>
+        speclib_classification_rule_rock_subtype: In the Specimen_Classification
+                class, if the attribute rock_subtype is present, then the attribute rock_type must
+                also be present.</sch:assert>
+      <sch:assert test="(speclib:material_origin = 'Synthetic' and speclib:synthetic_type) or
+                       (speclib:material_origin != 'Synthetic' and not (speclib:synthetic_type))
+            ">
+        <title>pds:Product_Observational/pds:Observation_Area/pds:Discipline_Area/speclib:Spectral_Library_Product/speclib:Specimen_Classification/Rule</title>
+        speclib_classification_rule_synthetic: In the Specimen_Classification
+                class, if material_origin is Synthetic, then the attribute synthetic_type must be
+                present. If material_origin is not Synthetic, then the attribute synthetic type must
+                not be present.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="pds:Product_Observational/pds:Observation_Area/pds:Discipline_Area/speclib:Spectral_Library_Product/speclib:Specimen_Parameters">
+      <sch:assert test="if (string-length(speclib:specimen_min_size) eq 0 or string-length(speclib:specimen_max_size) eq 0)
+                       then true()
+                       else (if (number(speclib:specimen_min_size) le number(speclib:specimen_max_size))
+                            then true() 
+                            else false()
+                            )
+            ">
+        <title>pds:Product_Observational/pds:Observation_Area/pds:Discipline_Area/speclib:Spectral_Library_Product/speclib:Specimen_Parameters/Rule</title>
+        speclib_specimen_parameters_rule_0: speclib:specimen_min_size must be less than or equal to speclib:specimen_max_size.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="speclib:Ancillary_Product/pds:Internal_Reference">
+      <sch:assert test="pds:reference_type = ('data_to_ancillary_data')">
+        <title>speclib:Ancillary_Product/pds:Internal_Reference/Rule</title>
+        speclib_ancillary_product_rule_0: In the
+                Ancillary_Product/Internal_Reference class, the value of the reference_type
+                attribute must be equal to "data_to_ancillary_data".</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
     <sch:rule context="speclib:Ancillary_Product/speclib:ancillary_product_type">
       <sch:assert test=". = ('Attenuated Total Reflectance Spectroscopy', 'Chemical Composition', 'Differential Scanning Calorimetry', 'Electron Microprobe Analysis', 'Image', 'Modal Mineralogy', 'Raman Spectroscopy', 'Reflectance Spectroscopy', 'Thermogravimetric Analysis', 'Transmission Spectroscopy', 'X-ray Diffraction', 'X-ray Fluorescence')">
         <title>speclib:Ancillary_Product/speclib:ancillary_product_type/speclib:ancillary_product_type</title>
         The attribute speclib:Ancillary_Product/speclib:ancillary_product_type must be equal to one of the following values 'Attenuated Total Reflectance Spectroscopy', 'Chemical Composition', 'Differential Scanning Calorimetry', 'Electron Microprobe Analysis', 'Image', 'Modal Mineralogy', 'Raman Spectroscopy', 'Reflectance Spectroscopy', 'Thermogravimetric Analysis', 'Transmission Spectroscopy', 'X-ray Diffraction', 'X-ray Fluorescence'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="speclib:Measurement_Instrument/pds:Internal_Reference">
+      <sch:assert test="pds:reference_type = ('is_instrument')">
+        <title>speclib:Measurement_Instrument/pds:Internal_Reference/Rule</title>
+        speclib_measurement_instrument_rule_0: In the
+                Measurement_Instrument/Internal_Reference class, the value of the reference_type
+                attribute must be equal to "is_instrument".</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -61,9 +175,9 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:rule context="speclib:Measurement_Parameters/speclib:laser_repetition_rate">
+    <sch:rule context="speclib:Measurement_Parameters/speclib:laser_pulse_rate">
       <sch:assert test="@unit = ('GHz', 'Hz', 'MHz', 'THz', 'kHz', 'mHz')">
-        <title>speclib:Measurement_Parameters/speclib:laser_repetition_rate/speclib:laser_repetition_rate</title>
+        <title>speclib:Measurement_Parameters/speclib:laser_pulse_rate/speclib:laser_pulse_rate</title>
         The attribute @unit must be equal to one of the following values 'GHz', 'Hz', 'MHz', 'THz', 'kHz', 'mHz'.</sch:assert>
     </sch:rule>
   </sch:pattern>
@@ -198,120 +312,6 @@
       <sch:assert test=". = ('N', 'Y')">
         <title>speclib:Specimen_Parameters/speclib:specimen_thin_section_flag/speclib:specimen_thin_section_flag</title>
         The attribute speclib:Specimen_Parameters/speclib:specimen_thin_section_flag must be equal to one of the following values 'N', 'Y'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="speclib:Ancillary_Product/pds:Internal_Reference">
-      <sch:assert test="pds:reference_type = ('data_to_ancillary_data')">
-        <title>speclib_ancillary_product_rule/Rule</title>
-        speclib_ancillary_product_rule_0: In the
-                Ancillary_Product/Internal_Reference class, the value of the reference_type
-                attribute must be equal to "data_to_ancillary_data".</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="pds:Product_Observational/pds:Observation_Area/pds:Discipline_Area/speclib:Spectral_Library_Product/speclib:Specimen_Classification">
-      <sch:assert test="(speclib:material_state = 'Solid' and 
-                speclib:material_type and
-                (speclib:material_subtype = 'Particulate' or speclib:material_subtype = 'Nonparticulate')) or 
-                (speclib:material_state != 'Solid')
-            ">
-        <title>speclib_classification_rule/Rule</title>
-        speclib_classification_rule_solid_material: In the Specimen_Classification
-                class, if material_state is Solid, then the attributes material_type and
-                material_subtype must be present, and material_subtype must include either
-                Particulate or Nonparticulate.</sch:assert>
-      <sch:assert test="(speclib:material_state = 'Solid' and speclib:material_type = 'Organic' and speclib:organic_type = 'Organic') or
-                (speclib:material_state = 'Solid' and speclib:material_type != 'Organic') or
-                (speclib:material_state != 'Solid')
-            ">
-        <title>speclib_classification_rule/Rule</title>
-        speclib:classification_rule_organic_material: In the
-                Specimen_Classification class, if material_type is Organic, then the 
-                attribute organic_type must also be Organic.</sch:assert>
-      <sch:assert test="(speclib:material_state = 'Solid' and speclib:material_type = 'Mineral' and speclib:mineral_type) or
-                       (speclib:material_state = 'Solid' and speclib:material_type != 'Mineral') or
-                       (speclib:material_state != 'Solid')
-            ">
-        <title>speclib_classification_rule/Rule</title>
-        speclib_classification_rule_mineral: In the Specimen_Classification class,
-                if material_type is Mineral, then the attribute mineral_type must be
-                present.</sch:assert>
-      <sch:assert test="(speclib:material_state = 'Solid' and speclib:material_type = 'Rock' and speclib:rock_type) or
-                       (speclib:material_state = 'Solid' and speclib:material_type != 'Rock') or
-                       (speclib:material_state != 'Solid')
-            ">
-        <title>speclib_classification_rule/Rule</title>
-        speclib_classification_rule_rock: In the Specimen_Classification class, if
-                material_type is Rock, then the attribute rock_type must be present.</sch:assert>
-      <sch:assert test="(speclib:material_subtype and speclib:material_type) or 
-                       (not (speclib:material_subtype))
-            ">
-        <title>speclib_classification_rule/Rule</title>
-        speclib_classification_rule_material_subtype: In the
-                Specimen_Classification class, if the attribute material_subtype is present, then
-                the attribute material_type must also be present.</sch:assert>
-      <sch:assert test="(speclib:mineral_subtype and speclib:mineral_type) or 
-                       (not (speclib:mineral_subtype))
-            ">
-        <title>speclib_classification_rule/Rule</title>
-        speclib_classification_rule_mineral_subtype: In the
-                Specimen_Classification class, if the attribute mineral_subtype is present, then the
-                attribute mineral_type must also be present.</sch:assert>
-      <sch:assert test="(speclib:rock_subtype and speclib:rock_type) or 
-                       (not (speclib:rock_subtype))
-            ">
-        <title>speclib_classification_rule/Rule</title>
-        speclib_classification_rule_rock_subtype: In the Specimen_Classification
-                class, if the attribute rock_subtype is present, then the attribute rock_type must
-                also be present.</sch:assert>
-      <sch:assert test="(speclib:material_origin = 'Synthetic' and speclib:synthetic_type) or
-                       (speclib:material_origin != 'Synthetic' and not (speclib:synthetic_type))
-            ">
-        <title>speclib_classification_rule/Rule</title>
-        speclib_classification_rule_synthetic: In the Specimen_Classification
-                class, if material_origin is Synthetic, then the attribute synthetic_type must be
-                present. If material_origin is not Synthetic, then the attribute synthetic type must
-                not be present.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="speclib:Measurement_Instrument/pds:Internal_Reference">
-      <sch:assert test="pds:reference_type = ('is_instrument')">
-        <title>speclib_measurement_instrument_rule/Rule</title>
-        speclib_measurement_instrument_rule_0: In the
-                Measurement_Instrument/Internal_Reference class, the value of the reference_type
-                attribute must be equal to "is_instrument".</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="pds:Product_Observational/pds:Observation_Area/pds:Discipline_Area/speclib:Spectral_Library_Product/speclib:Measurement_Parameters">
-      <sch:assert test="(number(speclib:spectral_range_min) le number(speclib:spectral_range_max))">
-        <title>speclib_measurement_parameters_rule/Rule</title>
-        speclib_measurement_parameters_rule_0: speclib:spectral_range_min must be less than or equal to speclib:spectral_range_max.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="pds:Product_Observational/pds:Observation_Area/pds:Discipline_Area/speclib:Spectral_Library_Product">
-      <sch:assert test="(speclib:measurement_segments =
-                count(speclib:Measurement_Parameters))">
-        <title>speclib_segments_rule/Rule</title>
-        speclib_measurement_segments_rule: The value of the attribute
-                measurement_segments must equal the number of occurrences of the class
-                Measurement_Parameters.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="pds:Product_Observational/pds:Observation_Area/pds:Discipline_Area/speclib:Spectral_Library_Product/speclib:Specimen_Parameters">
-      <sch:assert test="if (string-length(speclib:specimen_min_size) eq 0 or string-length(speclib:specimen_max_size) eq 0)
-                       then true()
-                       else (if (number(speclib:specimen_min_size) le number(speclib:specimen_max_size))
-                            then true() 
-                            else false()
-                            )
-            ">
-        <title>speclib_specimen_parameters_rule/Rule</title>
-        speclib_specimen_parameters_rule_0: speclib:specimen_min_size must be less than or equal to speclib:specimen_max_size.</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>

@@ -3,8 +3,8 @@
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
       "IM Version": "1.18.0.0" ,
-      "LDD Version": "1.3.0.0" ,
-      "Date": "2022-06-02T12:16:34" ,
+      "LDD Version": "1.4.0.0" ,
+      "Date": "2022-07-20T15:16:05" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "namespaces": ["pds:", "speclib:"] ,
       "classDictionary": [
@@ -587,7 +587,7 @@
                 "isAny": "false" ,
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
-                "maximumCardinality": "*" ,
+                "maximumCardinality": "2" ,
                 "classOrder": "1310" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.measurement_requestor"
@@ -627,22 +627,6 @@
               }
             }
            , {"association": {
-                "identifier": "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.spectral_grating" ,
-                "title": "spectral_grating" ,
-                "assocType": "attribute_of" ,
-                "isAttribute": "true" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "0" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "1340" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.spectral_grating"
-                 ]
-              }
-            }
-           , {"association": {
                 "identifier": "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.microscope_objective" ,
                 "title": "microscope_objective" ,
                 "assocType": "attribute_of" ,
@@ -652,7 +636,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1350" ,
+                "classOrder": "1340" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.microscope_objective"
                  ]
@@ -668,7 +652,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1360" ,
+                "classOrder": "1350" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.laser_pulses_per_integration"
                  ]
@@ -684,7 +668,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1370" ,
+                "classOrder": "1360" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.laser_attenuation"
                  ]
@@ -700,7 +684,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1380" ,
+                "classOrder": "1370" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.laser_power_sample"
                  ]
@@ -716,7 +700,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1390" ,
+                "classOrder": "1380" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.laser_power_for_calibration_min"
                  ]
@@ -732,7 +716,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1400" ,
+                "classOrder": "1390" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.laser_power_for_calibration_max"
                  ]
@@ -748,15 +732,15 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1410" ,
+                "classOrder": "1400" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.laser_wavelength"
                  ]
               }
             }
            , {"association": {
-                "identifier": "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.laser_repetition_rate" ,
-                "title": "laser_repetition_rate" ,
+                "identifier": "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.laser_pulse_rate" ,
+                "title": "laser_pulse_rate" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
@@ -764,9 +748,9 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1420" ,
+                "classOrder": "1410" ,
                 "attributeId": [
-                  "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.laser_repetition_rate"
+                  "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.laser_pulse_rate"
                  ]
               }
             }
@@ -780,7 +764,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1430" ,
+                "classOrder": "1420" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.laser_averaged_integrations"
                  ]
@@ -796,7 +780,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1440" ,
+                "classOrder": "1430" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.dark_subtraction_flag"
                  ]
@@ -812,7 +796,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1450" ,
+                "classOrder": "1440" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.laser_pulses_discarded"
                  ]
@@ -828,7 +812,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1460" ,
+                "classOrder": "1450" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.laser_integrations_saturated"
                  ]
@@ -874,7 +858,7 @@
                 "isAny": "false" ,
                 "groupName": "null" ,
                 "minimumCardinality": "1" ,
-                "maximumCardinality": "*" ,
+                "maximumCardinality": "2" ,
                 "classOrder": "1010" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.speclib.Specimen_Classification.speclib.specimen_type"
@@ -1715,7 +1699,7 @@
             "nameSpaceId": "speclib" ,
             "steward": "geo" ,
             "versionId": "1.18" ,
-            "description": "The incidence_angle element provides the angle between the local vertical at the intercept point and a vector from the intercept point to the detector." ,
+            "description": "The incidence_angle element provides the angle between the local vertical at the intercept point and a vector from the intercept point to the source." ,
             "isNillable": "true" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
@@ -1884,6 +1868,31 @@
         }
       , {
           "attribute": {
+            "identifier": "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.laser_pulse_rate" ,
+            "title": "laser_pulse_rate" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "speclib" ,
+            "steward": "geo" ,
+            "versionId": "1.18" ,
+            "description": "The laser_pulse_rate element indicates the frequency of laser pulses. A laser_pulse_rate of 10 Hz means that the laser fires ten times per second." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_NonNegative_Integer" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_NonNegative_Integer" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "0" ,
+            "maximumValue": "18446744073709551615" ,
+            "pattern": "[0-9]+" ,
+            "unitOfMeasure": "Units_of_Frequency" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Frequency" ,
+            "unitId": "GHz, Hz, MHz, THz, kHz, mHz" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
             "identifier": "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.laser_pulses_discarded" ,
             "title": "laser_pulses_discarded" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
@@ -1929,31 +1938,6 @@
             "unitOfMeasure": "null" ,
             "unitOfMeasureId": "null" ,
             "unitId": "null" ,
-            "defaultUnitId": "null"
-          }
-        }
-      , {
-          "attribute": {
-            "identifier": "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.laser_repetition_rate" ,
-            "title": "laser_repetition_rate" ,
-            "registrationAuthorityId": "0001_NASA_PDS_1" ,
-            "nameSpaceId": "speclib" ,
-            "steward": "geo" ,
-            "versionId": "1.18" ,
-            "description": "The laser_repetition_rate element indicates the frequency of laser pulses." ,
-            "isNillable": "false" ,
-            "isEnumerated": "false" ,
-            "isDeprecated": "false" ,
-            "dataType": "ASCII_NonNegative_Integer" ,
-            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_NonNegative_Integer" ,
-            "minimumCharacters": "Unbounded" ,
-            "maximumCharacters": "Unbounded" ,
-            "minimumValue": "0" ,
-            "maximumValue": "18446744073709551615" ,
-            "pattern": "[0-9]+" ,
-            "unitOfMeasure": "Units_of_Frequency" ,
-            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Frequency" ,
-            "unitId": "GHz, Hz, MHz, THz, kHz, mHz" ,
             "defaultUnitId": "null"
           }
         }
@@ -2297,7 +2281,7 @@
             "nameSpaceId": "speclib" ,
             "steward": "geo" ,
             "versionId": "1.18" ,
-            "description": "The measurement_requestor element identifies the individual or laboratory who requested the measurement. It may occur more than once." ,
+            "description": "The measurement_requestor element identifies the individual or laboratory who requested the measurement. The attribute may be present with a null value. A maximum of two names are permitted." ,
             "isNillable": "true" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
@@ -2453,17 +2437,17 @@
             "nameSpaceId": "speclib" ,
             "steward": "geo" ,
             "versionId": "1.18" ,
-            "description": "Objective of microscope." ,
+            "description": "The microscope_objective is the magnification power of the objective lens by power (e.g. 4x, 10x)." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
-            "dataType": "ASCII_Real" ,
-            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "dataType": "ASCII_NonNegative_Integer" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_NonNegative_Integer" ,
             "minimumCharacters": "Unbounded" ,
             "maximumCharacters": "Unbounded" ,
             "minimumValue": "0" ,
-            "maximumValue": "1.7976931348623157e308" ,
-            "pattern": "null" ,
+            "maximumValue": "18446744073709551615" ,
+            "pattern": "[0-9]+" ,
             "unitOfMeasure": "null" ,
             "unitOfMeasureId": "null" ,
             "unitId": "null" ,
@@ -2514,31 +2498,6 @@
             "minimumValue": "0" ,
             "maximumValue": "18446744073709551615" ,
             "pattern": "[0-9]+" ,
-            "unitOfMeasure": "null" ,
-            "unitOfMeasureId": "null" ,
-            "unitId": "null" ,
-            "defaultUnitId": "null"
-          }
-        }
-      , {
-          "attribute": {
-            "identifier": "0001_NASA_PDS_1.speclib.Measurement_Parameters.speclib.spectral_grating" ,
-            "title": "spectral_grating" ,
-            "registrationAuthorityId": "0001_NASA_PDS_1" ,
-            "nameSpaceId": "speclib" ,
-            "steward": "geo" ,
-            "versionId": "1.18" ,
-            "description": "!!! DEFINITION NEEDED !!!" ,
-            "isNillable": "false" ,
-            "isEnumerated": "false" ,
-            "isDeprecated": "false" ,
-            "dataType": "ASCII_Real" ,
-            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
-            "minimumCharacters": "Unbounded" ,
-            "maximumCharacters": "Unbounded" ,
-            "minimumValue": "0" ,
-            "maximumValue": "1.7976931348623157e308" ,
-            "pattern": "null" ,
             "unitOfMeasure": "null" ,
             "unitOfMeasureId": "null" ,
             "unitId": "null" ,
@@ -2621,13 +2580,13 @@
           , "PermissibleValueList": [
               {"PermissibleValue": {
                   "value": "Angle" ,
-                  "valueMeaning": "The Angle value means the spectra is a function of angle." ,
+                  "valueMeaning": "The Angle value means the spectrum is a function of angle." ,
                   "isDeprecated": "false"
                 }
              }
             , {"PermissibleValue": {
                   "value": "Energy" ,
-                  "valueMeaning": "The Energy value means the spectra is a function of energy." ,
+                  "valueMeaning": "The Energy value means the spectrum is a function of energy." ,
                   "isDeprecated": "false"
                 }
              }
@@ -2639,7 +2598,7 @@
              }
             , {"PermissibleValue": {
                   "value": "Time" ,
-                  "valueMeaning": "The Time value means the spectra is a function of time." ,
+                  "valueMeaning": "The Time value means the spectrum is a function of time." ,
                   "isDeprecated": "false"
                 }
              }
@@ -2691,7 +2650,7 @@
             "nameSpaceId": "speclib" ,
             "steward": "geo" ,
             "versionId": "1.18" ,
-            "description": "The spectral_resolution_width_max element identifies the maximum width of a spectral band in a given spectrum. If all bands are the same width, spectral_resolution_width_min and spectral_resolution_width_max will have the same value." ,
+            "description": "The spectral_resolution_width_max element identifies the full width at half maximum (FWHM) of a spectral band in a given spectrum. If all bands are the same width, spectral_resolution_width_min and spectral_resolution_width_max will have the same value." ,
             "isNillable": "true" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
@@ -2716,7 +2675,7 @@
             "nameSpaceId": "speclib" ,
             "steward": "geo" ,
             "versionId": "1.18" ,
-            "description": "The spectral_resolution_width_min element identifies the minimum width of a spectral band in a given spectrum. If all bands are the same width, spectral_resolution_width_min and spectral_resolution_width_max will have the same value." ,
+            "description": "The spectral_resolution_width_min element identifies the full width at half minimum (FWHM) of a spectral band in a given spectrum. If all bands are the same width, spectral_resolution_width_min and spectral_resolution_width_max will have the same value." ,
             "isNillable": "true" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
@@ -2896,7 +2855,7 @@
              }
             , {"PermissibleValue": {
                   "value": "Synthetic" ,
-                  "valueMeaning": "The Synthetic value indicates that the specimen was made in a laboratory. A synthetic sample could be either a physical mixture of natural materials or a laboratory synthesized material." ,
+                  "valueMeaning": "The Synthetic value indicates that the specimen or some portion of a specimen was manufactured, laboratory-generated, or naturally occuring sample that has been significantly modified (e.g. heating irradiation). Grinding and stirring alone do not count as significantly modified." ,
                   "isDeprecated": "false"
                 }
              }
@@ -2956,7 +2915,7 @@
             "nameSpaceId": "speclib" ,
             "steward": "geo" ,
             "versionId": "1.18" ,
-            "description": "The material_subtype element identifies the material subtype of the specimen." ,
+            "description": "The material_subtype element provides an optional descriptor for additional information about the physical state of the specimen, e.g. particulate or nonparticulate." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
@@ -3448,7 +3407,7 @@
             "nameSpaceId": "speclib" ,
             "steward": "geo" ,
             "versionId": "1.18" ,
-            "description": "The specimen_type element gives one or more terms that classify the origin of the specimen. " ,
+            "description": "The specimen_type element gives one or two terms that classify the origin of the specimen. " ,
             "isNillable": "false" ,
             "isEnumerated": "true" ,
             "isDeprecated": "false" ,
@@ -3496,7 +3455,7 @@
              }
             , {"PermissibleValue": {
                   "value": "Synthetic Sample" ,
-                  "valueMeaning": "The Synthetic Sample value means the specimen is a laboratory-generated sample." ,
+                  "valueMeaning": "The Synthetic Sample value means the specimen is manufactured, laboratory-generated, or a naturally occurring sample that has been significantly modified (e.g. heating, irradiation). Grinding and stirring alone do not count as significantly modified." ,
                   "isDeprecated": "false"
                 }
              }
@@ -3593,7 +3552,7 @@
             "nameSpaceId": "speclib" ,
             "steward": "geo" ,
             "versionId": "1.18" ,
-            "description": "The volatile_type element indicates whether the material was volatile-poor (less than 2.0% LOI) or volatile-rich (greater than 2.0% LOI). " ,
+            "description": "The volatile_type element indicates whether the material was volatile-poor (less than 2.0% loss on ignition) or volatile-rich (greater than 2.0% loss on ignition). " ,
             "isNillable": "true" ,
             "isEnumerated": "true" ,
             "isDeprecated": "false" ,
@@ -3611,13 +3570,13 @@
           , "PermissibleValueList": [
               {"PermissibleValue": {
                   "value": "Poor" ,
-                  "valueMeaning": "The Poor value indicates the specimen had less than 2.0% LOI." ,
+                  "valueMeaning": "The Poor value indicates the specimen had less than 2.0% loss on ignition." ,
                   "isDeprecated": "false"
                 }
              }
             , {"PermissibleValue": {
                   "value": "Rich" ,
-                  "valueMeaning": "The Rich value indicates the specimen had greater than 2.0% LOI." ,
+                  "valueMeaning": "The Rich value indicates the specimen had greater than 2.0% loss on ignition." ,
                   "isDeprecated": "false"
                 }
              }
@@ -3863,7 +3822,7 @@
             "nameSpaceId": "speclib" ,
             "steward": "geo" ,
             "versionId": "1.18" ,
-            "description": "The specimen_provider_name element gives the name of the person who provided the specimen." ,
+            "description": "The specimen_provider_name element gives the name of the person who provided the specimen for spectral measurement." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
@@ -3927,7 +3886,7 @@
             "nameSpaceId": "speclib" ,
             "steward": "geo" ,
             "versionId": "1.18" ,
-            "description": "The measurement_segments element gives the number of measurement segments that were combined to create the spectrum. If the spectrum is not merged from multiple segments, then the value of measurement_segments is 1." ,
+            "description": "The measurement_segments are the number of individual spectra that were combined to create the final merged spectrum. If the spectrum is not merged from multiple spectra, then the value of measurement_segments is 1." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,

@@ -1,12 +1,12 @@
 
->>  INFO LDDTOOL Version: 10.0.0
->>  INFO IM Version Id: 1.17.0.0
+>>  INFO LDDTOOL Version: 14.0.13
+>>  INFO IM Version Id: 1.18.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.23
->>  INFO Date: Thu Jun 02 19:16:27 UTC 2022
->>  INFO PARENT_DIR: /tmp/lddtool-14.0.1
->>  INFO SCRIPT_DIR: /tmp/lddtool-14.0.1/bin
->>  INFO LIB_DIR: /tmp/lddtool-14.0.1/lib
+>>  INFO IM Label Version Id: 1.24
+>>  INFO Date: Wed Jul 20 22:16:05 UTC 2022
+>>  INFO PARENT_DIR: /tmp/lddtool-14.0.13
+>>  INFO SCRIPT_DIR: /tmp/lddtool-14.0.13/bin
+>>  INFO LIB_DIR: /tmp/lddtool-14.0.13/lib
 
 >>> INFO Init:  - Config.Properties Namespace Id Found:speclib
 >>> INFO Init:  - Config.Properties Namespace Id Using:speclib
@@ -119,7 +119,6 @@
 >>> INFO Attribute: <specimen_solute_standard> - The default maximum characters provided by the attribute's data type is being overridden with 255
 >>> INFO Attribute: <specimen_type> - The default minimum characters provided by the attribute's data type is being overridden with 1
 >>> INFO Attribute: <specimen_type> - The default maximum characters provided by the attribute's data type is being overridden with 255
->>> INFO Attribute: <spectral_grating> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <spectral_range_max> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <spectral_range_min> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <spectral_range_parameter_name> - The default minimum characters provided by the attribute's data type is being overridden with 1
@@ -144,19 +143,18 @@
 
 Input:
 
-     - IM Version: 1H00
+     - IM Version: 1I00
      - PDS4 Flag: true
      - LDD Flag: true
-     - IM Version: true
      - Export JSON Flag: true
 
      - Ingest LDD(s): /home/runner/work/ldd-speclib/ldd-speclib/src/PDS4_SPECLIB_IngestLDD.xml
 
 Output:
 
-     - ./PDS4_SPECLIB_1H00_1300.xsd
-     - ./PDS4_SPECLIB_1H00_1300.sch
-     - ./PDS4_SPECLIB_1H00_1300.xml
-     - ./PDS4_SPECLIB_1H00_1300.JSON
+     - ./PDS4_SPECLIB_1I00_1400.xsd
+     - ./PDS4_SPECLIB_1I00_1400.sch
+     - ./PDS4_SPECLIB_1I00_1400.xml
+     - ./PDS4_SPECLIB_1I00_1400.JSON
 
 >>  INFO Exit(0)
