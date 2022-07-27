@@ -37,7 +37,8 @@
         - spectral_resolution_width_min
         - specimen_provider_name
         - incidence_angle
-        - microscope_objective        
+        - microscope_objective   
+    07/27/22 DMS update to PDS IM 1.18.0.0
        
 -->
 
@@ -56,12 +57,12 @@
         The SPECLIB dictionary contains classes and attributes specific to
         spectral reflectance measurements of laboratory specimens.
         
-        SPECLIB version 1.4.0.0 last updated 2022-07-15
-        PDS Build 1.17.0.0
+        SPECLIB version 1.4.0.0 last updated 2022-07-27
+        PDS Build 1.18.0.0
         LDDTool version 14.0.13
         Built with lddtool -plJ PDS4_SPECLIB_IngestLDD.xml
     </comment>
-    <last_modification_date_time>2021-12-16T21:27Z</last_modification_date_time>
+    <last_modification_date_time>2022-07-27T15:57Z</last_modification_date_time>
 
     <!-- Begin definitions of Spectral Library attributes  -->
     <!-- Definitions for attributes of these Spectral Library classes:
