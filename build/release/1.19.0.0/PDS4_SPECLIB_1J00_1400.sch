@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:speclib  Version:1.4.0.0 - Thu Oct 20 21:58:38 UTC 2022 -->
-  <!-- Generated from the PDS4 Information Model Version 1.16.0.0 - System Build 11.1 -->
+  <!-- PDS4 Schematron for Name Space Id:speclib  Version:1.4.0.0 - Thu Oct 20 21:58:40 UTC 2022 -->
+  <!-- Generated from the PDS4 Information Model Version 1.19.0.0 - System Build 13.0 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
 
