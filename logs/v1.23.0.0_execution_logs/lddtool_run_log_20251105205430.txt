@@ -1,0 +1,161 @@
+
+>>  INFO LDDTOOL Version: 16.0.0
+>>  INFO IM Version Id: 1.23.0.0
+>>  INFO IM Namespace Id: pds
+>>  INFO IM Label Version Id: 1.0
+>>  INFO Date: Wed Nov 05 20:54:30 UTC 2025
+>>  INFO PARENT_DIR: /tmp/lddtool-16.0.0/Data/
+
+>>> INFO Init:  - Config.Properties Namespace Id Found:speclib
+>>> INFO Init:  - Config.Properties Namespace Id Using:speclib
+>>> INFO Init:  - LDD Dictionary_Type is Discipline
+>>> INFO Attribute: <emission_angle> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <incidence_angle> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <measurement_atmosphere_composition> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <measurement_atmosphere_pressure> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <measurement_atmosphere_relative_humidity> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <measurement_atmosphere_temperature> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <measurement_date_time> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <measurement_geometry_type> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <measurement_requestor> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <measurement_run> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <phase_angle> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <source_specimen_id> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <spectral_resolution_width_max> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <spectral_resolution_width_min> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <spectral_resolution_width_unit_name> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <spectral_sampling_interval_max> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <spectral_sampling_interval_min> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <spectral_sampling_interval_unit_name> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <volatile_type> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <accumulation_time> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <ancillary_product_type> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <ancillary_product_type> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <data_producer_name> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <data_producer_name> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <data_provider_name> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <data_provider_name> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <emission_angle> - The default minimum value provided by the attribute's data type is being overridden with -90
+>>> INFO Attribute: <emission_angle> - The default maximum value provided by the attribute's data type is being overridden with 90
+>>> INFO Attribute: <incidence_angle> - The default minimum value provided by the attribute's data type is being overridden with -90
+>>> INFO Attribute: <incidence_angle> - The default maximum value provided by the attribute's data type is being overridden with 90
+>>> INFO Attribute: <instrument_name> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <instrument_name> - The default maximum characters provided by the attribute's data type is being overridden with 100
+>>> INFO Attribute: <instrument_name> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <laser_power_for_calibration_max> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <laser_power_for_calibration_max> - The default maximum value provided by the attribute's data type is being overridden with 100
+>>> INFO Attribute: <laser_power_for_calibration_min> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <laser_power_for_calibration_min> - The default maximum value provided by the attribute's data type is being overridden with 100
+>>> INFO Attribute: <laser_power_sample> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <laser_power_sample> - The default maximum value provided by the attribute's data type is being overridden with 100
+>>> INFO Attribute: <laser_wavelength> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <material_common_name> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <material_common_name> - The default maximum characters provided by the attribute's data type is being overridden with 100
+>>> INFO Attribute: <material_origin> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <material_origin> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <material_state> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <material_state> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <material_subtype> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <material_subtype> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <material_type> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <material_type> - The default maximum characters provided by the attribute's data type is being overridden with 30
+>>> INFO Attribute: <measurement_atmosphere_composition> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <measurement_atmosphere_composition> - The default maximum characters provided by the attribute's data type is being overridden with 1000
+>>> INFO Attribute: <measurement_atmosphere_description> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <measurement_atmosphere_description> - The default maximum characters provided by the attribute's data type is being overridden with 1000
+>>> INFO Attribute: <measurement_atmosphere_relative_humidity> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <measurement_atmosphere_relative_humidity> - The default maximum value provided by the attribute's data type is being overridden with 100
+>>> INFO Attribute: <measurement_geometry_type> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <measurement_geometry_type> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <measurement_notes> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <measurement_notes> - The default maximum characters provided by the attribute's data type is being overridden with 1000
+>>> INFO Attribute: <measurement_reference_standard> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <measurement_reference_standard> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <measurement_requestor> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <measurement_requestor> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <measurement_source_description> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <measurement_source_description> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <measurement_type> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <microscope_objective> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <mineral_subtype> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <mineral_subtype> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <mineral_type> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <mineral_type> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <organic_type> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <organic_type> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <phase_angle> - The default minimum value provided by the attribute's data type is being overridden with -180
+>>> INFO Attribute: <phase_angle> - The default maximum value provided by the attribute's data type is being overridden with 180
+>>> INFO Attribute: <rock_subtype> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <rock_subtype> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <rock_type> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <rock_type> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <source_specimen_id> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <source_specimen_id> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <specimen_collection_location> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <specimen_collection_location> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <specimen_owner_location> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <specimen_owner_location> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <specimen_owner_name> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <specimen_owner_name> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <specimen_description> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <specimen_description> - The default maximum characters provided by the attribute's data type is being overridden with 1000
+>>> INFO Attribute: <specimen_dilution_method> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <specimen_dilution_method> - The default maximum characters provided by the attribute's data type is being overridden with 1000
+>>> INFO Attribute: <specimen_id> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <specimen_id> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <specimen_max_size> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <specimen_max_size_reported_percentile> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <specimen_max_size_reported_percentile> - The default maximum value provided by the attribute's data type is being overridden with 100
+>>> INFO Attribute: <specimen_min_size> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <specimen_min_size_reported_percentile> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <specimen_min_size_reported_percentile> - The default maximum value provided by the attribute's data type is being overridden with 100
+>>> INFO Attribute: <specimen_name> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <specimen_name> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <specimen_ph> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <specimen_ph> - The default maximum value provided by the attribute's data type is being overridden with 14
+>>> INFO Attribute: <specimen_provider_name> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <specimen_provider_name> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <specimen_solute_standard> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <specimen_solute_standard> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <specimen_type> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <specimen_type> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <spectral_range_max> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <spectral_range_min> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <spectral_range_parameter_name> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <spectral_range_parameter_name> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <spectral_range_unit_name> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <spectral_range_unit_name> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <spectral_resolution_width_unit_name> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <spectral_resolution_width_unit_name> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <spectral_sampling_interval_unit_name> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <spectral_sampling_interval_unit_name> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <synthetic_processing_description> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <synthetic_processing_description> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <synthetic_type> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <synthetic_type> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <volatile_type> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <volatile_type> - The default maximum characters provided by the attribute's data type is being overridden with 255
+
+ -- LDDTool Execution Summary --
+     0 warning(s)
+     0 error(s)
+     0 fatal error(s)
+
+Input:
+
+     - IM Version: 1N00
+     - PDS4 Flag: true
+     - LDD Flag: true
+     - IM Version: true
+     - Export JSON Flag: true
+
+     - Ingest LDD(s): /home/runner/work/ldd-speclib/ldd-speclib/src/PDS4_SPECLIB_IngestLDD.xml
+
+Output:
+
+     - ./PDS4_SPECLIB_1N00_1500.xsd
+     - ./PDS4_SPECLIB_1N00_1500.sch
+     - ./PDS4_SPECLIB_1N00_1500.xml
+     - ./export/PDS4_PDS_1N00.JSON
+
+>>  INFO Exit(0)
