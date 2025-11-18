@@ -6,11 +6,13 @@ Steward: Dan Scholes, [PDS Geosciences Node](https://pds-geosciences.wustl.edu)
 
 # Documentation
 
+See this dictionary's online documentation at <https://pds-data-dictionaries.github.io/ldd-speclib/user/user-guide.html> for a User Guide.
+
 Archived User Guide: [Spectral Library Dictionary Guide](https://github.com/pds-data-dictionaries/ldd-speclib/blob/main/Spectral_Library_Dictionary_Guide.pdf)
 
 # Latest Release
 
-[Spectral Library](https://pds.nasa.gov/datastandards/dictionaries/index-1.18.0.0.shtml#speclib)
+[Spectral Library](https://pds.nasa.gov/datastandards/dictionaries/#speclib)
 
 [GitHub](https://github.com/pds-data-dictionaries/ldd-speclib/releases)
 
