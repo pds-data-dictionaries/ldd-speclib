@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Spectral Library Namespace'
+project = 'Spectral Library Data Dictionary'
 # copyright = overidden by CSS specified below
 author = 'NASA Planetary Data System'
 
