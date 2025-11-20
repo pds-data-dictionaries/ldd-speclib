@@ -6,7 +6,7 @@ Steward: Dan Scholes, [PDS Geosciences Node](https://pds-geosciences.wustl.edu)
 
 # Documentation
 
-See this dictionary's online documentation at <https://pds-data-dictionaries.github.io/ldd-speclib/user/user-guide.html> for a User Guide.
+See this dictionary's online documentation at <https://pds-data-dictionaries.github.io/ldd-speclib/user/user-guide.html> for a User Guide. A [PDF version](https://github.com/pds-data-dictionaries/ldd-speclib/blob/main/docs/spectrallibrarydatadictionary.pdf) is available, as well. 
 
 Archived User Guide: [Spectral Library Dictionary Guide](https://github.com/pds-data-dictionaries/ldd-speclib/blob/main/Spectral_Library_Dictionary_Guide.pdf)
 
