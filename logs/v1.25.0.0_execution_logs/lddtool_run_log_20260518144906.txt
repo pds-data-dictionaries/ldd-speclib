@@ -1,10 +1,10 @@
 
->>  INFO LDDTOOL Version: 16.1.0
->>  INFO IM Version Id: 1.21.0.0
+>>  INFO LDDTOOL Version: 16.0.0
+>>  INFO IM Version Id: 1.25.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.27
->>  INFO Date: Fri Apr 24 16:54:49 UTC 2026
->>  INFO PARENT_DIR: /tmp/lddtool-16.1.0/Data/
+>>  INFO IM Label Version Id: 1.0
+>>  INFO Date: Mon May 18 14:49:06 UTC 2026
+>>  INFO PARENT_DIR: /tmp/lddtool-16.0.0/Data/
 
 >>> INFO Init:  - Config.Properties Namespace Id Found:speclib
 >>> INFO Init:  - Config.Properties Namespace Id Using:speclib
@@ -143,19 +143,18 @@
 
 Input:
 
-     - IM Version: 1L00
+     - IM Version: 1P00
      - PDS4 Flag: true
      - LDD Flag: true
-     - IM Version: true
      - Export JSON Flag: true
 
      - Ingest LDD(s): /home/runner/work/ldd-speclib/ldd-speclib/src/PDS4_SPECLIB_IngestLDD.xml
 
 Output:
 
-     - ./PDS4_SPECLIB_1L00_1500.xsd
-     - ./PDS4_SPECLIB_1L00_1500.sch
-     - ./PDS4_SPECLIB_1L00_1500.xml
-     - ./export/PDS4_PDS_1L00.JSON
+     - ./PDS4_SPECLIB_1P00_1500.xsd
+     - ./PDS4_SPECLIB_1P00_1500.sch
+     - ./PDS4_SPECLIB_1P00_1500.xml
+     - ./export/PDS4_PDS_1P00.JSON
 
 >>  INFO Exit(0)
