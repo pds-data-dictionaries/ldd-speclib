@@ -1,0 +1,56 @@
+>>  ERROR Invalid argument list
+usage: LDDTool [-h] [-p] [-l] [-d] [-D] [-J] [-a] [-m] [-M] [-n] [-N]
+               [-s S] [-1] [-T] [-O] [-o] [-C] [-v]
+               [-V {1B00,1B10,1C00,1D00,1E00,1F00,1G00,1H00,1I00,1J00,1K00,1L00,1M00,1N00,1O00,1P00}]
+               [fileNameArr [fileNameArr ...]]
+
+LDDTool process control:
+
+positional arguments:
+  fileNameArr            Ingest_LDD files to process.
+
+named arguments:
+  -h, --help             show this help message and exit
+  -p, --pds4             Set the context to PDS4 (default: false)
+  -l, --ldd              Process one or  more  local  data dictionary input
+                         files (default: false)
+  -d, --discipline       Omit the term "mission"  from  the  namespace of a
+                         dictionary (default: false)
+  -D, --datadict         Write the Data  Dictionary  DocBook file (default:
+                         false)
+  -J, --json             Write the  data  dictionary  to  a  JSON formatted
+                         file (default: false)
+  -a, --include-all-namespaces
+                         Include all namespaces  in  the  JSON output (only
+                         valid with --json) (default: false)
+  -m, --merge            Generate file to merge  the  local dictionary into
+                         the master dictionary (default: false)
+  -M, --mission          This option has no  effect  starting  with PDS4 IM
+                         Version 1.14.0.0. See  the  LDDTool Usage document
+                         for  more  information  on  how  to  provide  this
+                         information. (default: false)
+  -n, --nuance           Write  nuance   property   maps   to   LDD  schema
+                         annotation in JSON (default: false)
+  -N, --namespace        Print the list  of  configured  namespaces  to the
+                         log (default: false)
+  -s S, --namespace-version S
+                         Specify the  namespace  version  number  (positive
+                         integer). Required when  using  -s or --namespace-
+                         version.
+  -1, --im_specification
+                         Write the Information  Model  Specification for an
+                         LDD (default: false)
+  -T, --termmap          Terminological   mapping   to    alternate   names
+                         (default: false)
+  -O, --ttl              OWL/RDF/TTL   output    in    TTL    format    (IM
+                         Classification) (default: false)
+  -o, --rdf              OWL/RDF  output   in   RDF   format   (IM  Export)
+                         (default: false)
+  -C, --custom           Customized  processing  and   reporting  (default:
+                         false)
+  -v, --version          Returns  the  LDDTool   version  number  (default:
+                         false)
+  -V {1B00,1B10,1C00,1D00,1E00,1F00,1G00,1H00,1I00,1J00,1K00,1L00,1M00,1N00,1O00,1P00}, --pds4_version {1B00,1B10,1C00,1D00,1E00,1F00,1G00,1H00,1I00,1J00,1K00,1L00,1M00,1N00,1O00,1P00}
+                         Set the IM Version (default: 1P00)
+
+>>  INFO Exit(1)
