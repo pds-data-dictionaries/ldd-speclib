@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:speclib  Version:1.5.0.0 - Fri Apr 24 16:54:45 UTC 2026 -->
+  <!-- PDS4 Schematron for Name Space Id:speclib  Version:1.5.0.0 - Thu Nov 19 22:38:27 UTC 2026 -->
   <!-- Generated from the PDS4 Information Model Version 1.20.0.0 - System Build 13.1 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -140,66 +140,10 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:rule context="speclib:Measurement_Parameters/speclib:accumulation_time">
-      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr')">
-        <title>speclib:Measurement_Parameters/speclib:accumulation_time/speclib:accumulation_time</title>
-        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
     <sch:rule context="speclib:Measurement_Parameters/speclib:dark_subtraction_flag">
       <sch:assert test=". = ('N', 'Y')">
         <title>speclib:Measurement_Parameters/speclib:dark_subtraction_flag/speclib:dark_subtraction_flag</title>
         The attribute speclib:Measurement_Parameters/speclib:dark_subtraction_flag must be equal to one of the following values 'N', 'Y'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="speclib:Measurement_Parameters/speclib:emission_angle">
-      <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'microrad', 'mrad', 'rad')">
-        <title>speclib:Measurement_Parameters/speclib:emission_angle/speclib:emission_angle</title>
-        The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'microrad', 'mrad', 'rad'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="speclib:Measurement_Parameters/speclib:incidence_angle">
-      <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'microrad', 'mrad', 'rad')">
-        <title>speclib:Measurement_Parameters/speclib:incidence_angle/speclib:incidence_angle</title>
-        The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'microrad', 'mrad', 'rad'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="speclib:Measurement_Parameters/speclib:laser_attenuation">
-      <sch:assert test="@unit = ('J', 'MeV', 'eV', 'keV')">
-        <title>speclib:Measurement_Parameters/speclib:laser_attenuation/speclib:laser_attenuation</title>
-        The attribute @unit must be equal to one of the following values 'J', 'MeV', 'eV', 'keV'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="speclib:Measurement_Parameters/speclib:laser_pulse_rate">
-      <sch:assert test="@unit = ('GHz', 'Hz', 'MHz', 'THz', 'kHz', 'mHz')">
-        <title>speclib:Measurement_Parameters/speclib:laser_pulse_rate/speclib:laser_pulse_rate</title>
-        The attribute @unit must be equal to one of the following values 'GHz', 'Hz', 'MHz', 'THz', 'kHz', 'mHz'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="speclib:Measurement_Parameters/speclib:laser_wavelength">
-      <sch:assert test="@unit = ('AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm')">
-        <title>speclib:Measurement_Parameters/speclib:laser_wavelength/speclib:laser_wavelength</title>
-        The attribute @unit must be equal to one of the following values 'AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="speclib:Measurement_Parameters/speclib:measurement_atmosphere_pressure">
-      <sch:assert test="@unit = ('Pa', 'bar', 'hPa', 'mbar')">
-        <title>speclib:Measurement_Parameters/speclib:measurement_atmosphere_pressure/speclib:measurement_atmosphere_pressure</title>
-        The attribute @unit must be equal to one of the following values 'Pa', 'bar', 'hPa', 'mbar'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="speclib:Measurement_Parameters/speclib:measurement_atmosphere_temperature">
-      <sch:assert test="@unit = ('K', 'degC')">
-        <title>speclib:Measurement_Parameters/speclib:measurement_atmosphere_temperature/speclib:measurement_atmosphere_temperature</title>
-        The attribute @unit must be equal to one of the following values 'K', 'degC'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -214,13 +158,6 @@
       <sch:assert test=". = ('Attenuated Total Reflectance', 'Emission', 'LIBS', 'Raman', 'Reflectance', 'Transmission', 'X-Ray Absorption Near-Edge Structure', 'X-Ray Diffraction', 'X-Ray Fluorescence')">
         <title>speclib:Measurement_Parameters/speclib:measurement_type/speclib:measurement_type</title>
         The attribute speclib:Measurement_Parameters/speclib:measurement_type must be equal to one of the following values 'Attenuated Total Reflectance', 'Emission', 'LIBS', 'Raman', 'Reflectance', 'Transmission', 'X-Ray Absorption Near-Edge Structure', 'X-Ray Diffraction', 'X-Ray Fluorescence'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="speclib:Measurement_Parameters/speclib:phase_angle">
-      <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'microrad', 'mrad', 'rad')">
-        <title>speclib:Measurement_Parameters/speclib:phase_angle/speclib:phase_angle</title>
-        The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'microrad', 'mrad', 'rad'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -291,20 +228,6 @@
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('Poor', 'Rich', 'Unknown')))) then false() else true()">
         <title>speclib:Specimen_Classification/speclib:volatile_type/speclib:volatile_type</title>
         The attribute speclib:Specimen_Classification/speclib:volatile_type must be nulled or equal to one of the following values 'Poor', 'Rich', 'Unknown'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="speclib:Specimen_Parameters/speclib:specimen_max_size">
-      <sch:assert test="@unit = ('AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm')">
-        <title>speclib:Specimen_Parameters/speclib:specimen_max_size/speclib:specimen_max_size</title>
-        The attribute @unit must be equal to one of the following values 'AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="speclib:Specimen_Parameters/speclib:specimen_min_size">
-      <sch:assert test="@unit = ('AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm')">
-        <title>speclib:Specimen_Parameters/speclib:specimen_min_size/speclib:specimen_min_size</title>
-        The attribute @unit must be equal to one of the following values 'AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
